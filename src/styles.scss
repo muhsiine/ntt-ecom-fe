@@ -1,1 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
+/* Tailwind configuration */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Customized classes */
+.navbar{
+    @apply p-4 text-center bg-cyan-600 text-white shadow-lg;
+}
+.btn{
+    @apply bg-cyan-500 text-white px-4 py-2 rounded hover:bg-cyan-700 shadow;
+}
