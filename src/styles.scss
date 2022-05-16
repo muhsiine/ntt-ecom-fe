@@ -3,10 +3,23 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Global font */
+@import url('http://fonts.cdnfonts.com/css/sofia-pro');
+
+*{
+    font-family: 'Sofia Pro', sans-serif;
+}
+
 /* Customized classes */
 .navbar{
-    @apply p-4 text-center bg-cyan-600 text-white shadow-lg;
+    @apply p-4 text-center bg-slate-500 text-white shadow-lg;
 }
 .btn{
-    @apply bg-cyan-500 text-white px-4 py-2 rounded hover:bg-cyan-700 shadow;
+    @apply bg-slate-600 text-white px-4 py-2 rounded hover:bg-slate-700 shadow;
+}
+.input{
+    @apply p-2 rounded text-sm text-slate-900 mt-2 ;
+}
+.line{
+    @apply w-full bg-slate-200 h-1 rounded my-4 ;
 }
