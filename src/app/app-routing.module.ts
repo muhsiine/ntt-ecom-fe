@@ -5,11 +5,13 @@ import { ForgetPasswordComponent } from './components/auth/forget-password/forge
 import { HomeComponent } from './components/home/home/home.component';
 import { LoginComponent } from './components/auth/login/login.component';
 import { RegisterComponent } from './components/auth/register/register.component';
+import { AdminComponent } from './components/admin/admin.component';
 
 const routes: Routes = [
   { path: 'login', component:LoginComponent },
   { path: 'register', component:RegisterComponent },
   { path: 'forgot-password', component:ForgetPasswordComponent },
+  { path: 'admin',component:AdminComponent,loadChildren:()=>import('./components/admin/admin.module').then(res=>res.AdminModule)},
   { path: '', component:HomeComponent }
 ];
 

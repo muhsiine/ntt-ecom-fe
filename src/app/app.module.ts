@@ -11,7 +11,7 @@ import { SidebarComponent } from './components/shared/sidebar/sidebar.component'
 import { HomeComponent } from './components/home/home/home.component';
 import { RegisterComponent } from './components/auth/register/register.component';
 import { ForgetPasswordComponent } from './components/auth/forget-password/forget-password.component';
-import { AdminSidebarComponent } from './components/shared/admin-sidebar/admin-sidebar.component';
+
 
 @NgModule({
   declarations: [
@@ -23,7 +23,7 @@ import { AdminSidebarComponent } from './components/shared/admin-sidebar/admin-s
     HomeComponent,
     RegisterComponent,
     ForgetPasswordComponent,
-    AdminSidebarComponent
+
   ],
   imports: [
     BrowserModule,
