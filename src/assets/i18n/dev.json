@@ -1,0 +1,28 @@
+{
+    "goback": "Go back",
+    "auth.or": "OR",
+    "auth.username": "Username",
+    "auth.password": "Password",
+    "auth.email": "Email",
+    "auth.enter.username": "Enter username",
+    "auth.enter.password": "Enter password",
+    "auth.enter.email": "Enter your email",
+
+    "auth.login.title": "Sign in",
+    "auth.login.with": "Login with {{company}}",
+    "auth.login.forgotpassword": "Forgot password ?",
+    "auth.login.button.login": "Login",
+    "auth.login.register.label": "I don't have an account !",
+    "auth.login.register.href": "Register",
+
+    "auth.register.title": "Register",
+    "auth.register.with": "Create an account with {{company}}",
+    "auth.register.button": "Create an account",
+    "auth.register.login.label": "Already have an account !",
+    "auth.register.login.href": "Login",
+
+    "auth.forgotpassword.title": "Forgot password",
+    "auth.forgotpassword.button": "Send email",
+    "auth.forgotpassword.login.label": "I remember my password !",
+    "auth.forgotpassword.login.href": "Login"
+}
