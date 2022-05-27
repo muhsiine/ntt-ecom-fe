@@ -3,22 +3,23 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { IServiceCommon } from '../interfaces/common';
 import { Order } from '../models/order';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class OrderService implements IServiceCommon {
 
-  private apiUrl = 'http://localhost:8080/orders/';
+  private url = environment.apiUrl + 'orders/'
 
   constructor(private http : HttpClient) { }
 
   getAll(): Observable<Order[]> {
-    return this.http.get<Order[]>(this.apiUrl);
+    return this.http.get<Order[]>(this.url);
   }
 
   getOrdersByUser(user_id : number): Observable<Order[]>{
-    return this.http.get<Order[]>(this.apiUrl+user_id);
+    return this.http.get<Order[]>(this.url+user_id);
   }
   
 }
