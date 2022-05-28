@@ -22,7 +22,6 @@ export class GlobalComponent implements OnInit {
 
   public changeLanguage() {
     localStorage.setItem('locale', this.code);
-    // window.location.reload();
     this.translateService.use(this.code);
   }
 

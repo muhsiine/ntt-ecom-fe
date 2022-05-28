@@ -11,12 +11,12 @@ import { environment } from '../../environments/environment';
 })
 export class CategoryService implements IServiceCommon {
 
-  private url = environment.apiUrl + 'categories/';
+  private baseUrl = `${environment.apiUrl}/categories`;
 
   constructor(private http: HttpClient) { }
 
   getAll(): Observable<Category[]> {
-    return this.http.get<Category[]>(this.url+'all');
+    return this.http.get<Category[]>(`${this.baseUrl}/all`);
   }
 
 }

@@ -10,16 +10,16 @@ import { environment } from '../../environments/environment';
 })
 export class OrderService implements IServiceCommon {
 
-  private url = environment.apiUrl + 'orders/'
+  private baseUrl = `${environment.apiUrl}/orders`;
 
   constructor(private http : HttpClient) { }
 
   getAll(): Observable<Order[]> {
-    return this.http.get<Order[]>(this.url+'all');
+    return this.http.get<Order[]>(`${this.baseUrl}/all`);
   }
 
   getOrdersByUser(user_id : number): Observable<Order[]>{
-    return this.http.get<Order[]>(this.url+user_id);
+    return this.http.get<Order[]>(`${this.baseUrl}/${user_id}`);
   }
   
 }

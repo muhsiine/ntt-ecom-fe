@@ -9,12 +9,12 @@ import { environment } from '../../environments/environment';
 })
 export class ImageService {
 
-  private url = environment.apiUrl + 'images/';
+  private baseUrl = `${environment.apiUrl}/images`;
 
   constructor(private http : HttpClient) { }
 
   getImageByProduct(product_id : number) : Observable<Image>{
-    return this.http.get<Image>(this.url+'product/'+product_id);
+    return this.http.get<Image>(`${this.baseUrl}/product/${product_id}`);
   }
 
 }

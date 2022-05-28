@@ -10,36 +10,24 @@ import { environment } from '../../environments/environment';
 })
 export class ProductService implements IServiceCommon {
 
-  private url = environment.apiUrl + 'products/';
+  private baseUrl = `${environment.apiUrl}/products`;
 
   constructor(private http : HttpClient) { }
 
   getAll(): Observable<Product[]>{
-    return this.http.get<Product[]>(this.url+'all');
+    return this.http.get<Product[]>(`${this.baseUrl}/all`);
   }
 
   getProductById(product_id : number): Observable<Product>{
-    return this.http.get<Product>(this.url+product_id);
-  }
-
-  getProductsByUser(user_id : number): Observable<Product[]>{
-    return this.http.get<Product[]>(this.url+'user/'+user_id);
+    return this.http.get<Product>(`${this.baseUrl}/${product_id}`);
   }
 
   getProductsByCategory(category_id : number): Observable<Product[]>{
-    return this.http.get<Product[]>(this.url+"category/"+category_id);
+    return this.http.get<Product[]>(`${this.baseUrl}/category/${category_id}`);
   }
 
-  getProductsByQuantity(quantity ?: number): Observable<Product[]> | null{
-    return quantity != null && quantity > 0 ? this.http.get<Product[]>(this.url+quantity) : null;
-  }
-
-  saveProduct(product : Product, product_id ?: number): Observable<Product>{
-    if(product_id != null){
-      return this.http.put<Product>(this.url+'edit/'+product_id, product);
-    }else{
-      return this.http.post<Product>(this.url+'save', product);
-    }
+  saveProduct(product : Product): Observable<Product>{
+      return this.http.post<Product>(`${this.baseUrl}/save`, product);
   }
 
 }
