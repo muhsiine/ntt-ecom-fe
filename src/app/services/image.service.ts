@@ -14,7 +14,7 @@ export class ImageService {
   constructor(private http : HttpClient) { }
 
   getImageByProduct(product_id : number) : Observable<Image>{
-    return this.http.get<Image>(this.url+product_id);
+    return this.http.get<Image>(this.url+'product/'+product_id);
   }
 
 }

@@ -15,7 +15,7 @@ export class ProductService implements IServiceCommon {
   constructor(private http : HttpClient) { }
 
   getAll(): Observable<Product[]>{
-    return this.http.get<Product[]>(this.url);
+    return this.http.get<Product[]>(this.url+'all');
   }
 
   getProductById(product_id : number): Observable<Product>{
@@ -23,11 +23,11 @@ export class ProductService implements IServiceCommon {
   }
 
   getProductsByUser(user_id : number): Observable<Product[]>{
-    return this.http.get<Product[]>(this.url+user_id);
+    return this.http.get<Product[]>(this.url+'user/'+user_id);
   }
 
   getProductsByCategory(category_id : number): Observable<Product[]>{
-    return this.http.get<Product[]>(this.url+"/category"+category_id);
+    return this.http.get<Product[]>(this.url+"category/"+category_id);
   }
 
   getProductsByQuantity(quantity ?: number): Observable<Product[]> | null{
@@ -36,9 +36,9 @@ export class ProductService implements IServiceCommon {
 
   saveProduct(product : Product, product_id ?: number): Observable<Product>{
     if(product_id != null){
-      return this.http.put<Product>(this.url+product_id, product);
+      return this.http.put<Product>(this.url+'edit/'+product_id, product);
     }else{
-      return this.http.post<Product>(this.url, product);
+      return this.http.post<Product>(this.url+'save', product);
     }
   }
 

@@ -15,7 +15,7 @@ export class OrderService implements IServiceCommon {
   constructor(private http : HttpClient) { }
 
   getAll(): Observable<Order[]> {
-    return this.http.get<Order[]>(this.url);
+    return this.http.get<Order[]>(this.url+'all');
   }
 
   getOrdersByUser(user_id : number): Observable<Order[]>{

@@ -16,7 +16,7 @@ export class CategoryService implements IServiceCommon {
   constructor(private http: HttpClient) { }
 
   getAll(): Observable<Category[]> {
-    return this.http.get<Category[]>(this.url);
+    return this.http.get<Category[]>(this.url+'all');
   }
 
 }
