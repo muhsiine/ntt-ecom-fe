@@ -23,5 +23,8 @@
   "auth.forgotpassword.title": "Mot de passe oublié",
   "auth.forgotpassword.button": "Enovoyé un email",
   "auth.forgotpassword.login.label": "Je me r'appel à mon mot de passe !",
-  "auth.forgotpassword.login.href": "Se connecter"
+  "auth.forgotpassword.login.href": "Se connecter",
+
+  "navbar.home": "Accueil"
+
 }

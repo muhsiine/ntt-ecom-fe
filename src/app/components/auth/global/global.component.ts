@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-auth-global',
@@ -13,7 +14,7 @@ export class GlobalComponent implements OnInit {
     {code: 'fr', label: 'Fr'}
   ];
 
-  constructor() { }
+  constructor(private translateService: TranslateService) { }
 
   ngOnInit(): void {
     this.code = localStorage.getItem('locale') || "en"; 
@@ -21,7 +22,8 @@ export class GlobalComponent implements OnInit {
 
   public changeLanguage() {
     localStorage.setItem('locale', this.code);
-    window.location.reload();
+    // window.location.reload();
+    this.translateService.use(this.code);
   }
 
 }

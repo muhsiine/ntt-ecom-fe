@@ -2,7 +2,7 @@ import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { catchError, forkJoin, of } from 'rxjs';
 import { AppRoutingModule } from './app-routing.module';
-import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http'
 
 import { AppComponent } from './app.component';
@@ -16,8 +16,15 @@ import { ForgetPasswordComponent } from './components/auth/forget-password/forge
 import { AdminSidebarComponent } from './components/shared/admin-sidebar/admin-sidebar.component';
 import { FormsModule } from '@angular/forms';
 import { GlobalComponent } from './components/auth/global/global.component';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader'
 
 
+
+
+
+export function HttpLoaderFactory(http: HttpClient){
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,46 +43,49 @@ import { GlobalComponent } from './components/auth/global/global.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    TranslateModule.forRoot()
+    TranslateModule.forRoot({
+      defaultLanguage: 'en',
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    })
   ],
-  providers: [{
-    provide: APP_INITIALIZER,
-    useFactory: initApp,
-    deps: [HttpClient, TranslateService],
-    multi: true
-  }],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
 
-// i18n Initialization
-export function initApp(http: HttpClient, translate: TranslateService) {
-  return () => new Promise<boolean>((resolve: (res: boolean) => void) => {
 
-    const defaultLocale = 'en';
-    const translationsUrl = '/assets/i18n/translations';
-    const sufix = '.json';
-    const storageLocale = localStorage.getItem('locale');
-    const locale = storageLocale || defaultLocale;
+// // i18n Initialization
+// export function initApp(http: HttpClient, translate: TranslateService) {
+//   return () => new Promise<boolean>((resolve: (res: boolean) => void) => {
 
-    forkJoin([
-      http.get(`/assets/i18n/dev.json`).pipe(
-        catchError(() => of(null))
-      ),
-      http.get(`${translationsUrl}/${locale}${sufix}`).pipe(
-        catchError(() => of(null))
-      )
-    ]).subscribe((response: any[]) => {
-      const devKeys = response[0];
-      const translatedKeys = response[1];
+//     const defaultLocale = 'en';
+//     const translationsUrl = '/assets/i18n/translations';
+//     const sufix = '.json';
+//     const storageLocale = localStorage.getItem('locale');
+//     const locale = storageLocale || defaultLocale;
 
-      translate.setTranslation(defaultLocale, devKeys || {});
-      translate.setTranslation(locale, translatedKeys || {}, true);
+//     forkJoin([
+//       http.get(`/assets/i18n/dev.json`).pipe(
+//         catchError(() => of(null))
+//       ),
+//       http.get(`${translationsUrl}/${locale}${sufix}`).pipe(
+//         catchError(() => of(null))
+//       )
+//     ]).subscribe((response: any[]) => {
+//       const devKeys = response[0];
+//       const translatedKeys = response[1];
 
-      translate.setDefaultLang(defaultLocale);
-      translate.use(locale);
+//       translate.setTranslation(defaultLocale, devKeys || {});
+//       translate.setTranslation(locale, translatedKeys || {}, true);
 
-      resolve(true);
-    });
-  });
-}
+//       translate.setDefaultLang(defaultLocale);
+//       translate.use(locale);
+
+//       resolve(true);
+//     });
+//   });
+// }
