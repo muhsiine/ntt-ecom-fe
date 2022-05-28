@@ -16,7 +16,7 @@
     @apply p-4 text-center bg-slate-500 text-white shadow-lg;
 }
 .btn{
-    @apply bg-slate-600 text-white px-4 py-2 rounded hover:bg-slate-700 shadow;
+    @apply bg-secondary-600 text-white px-4 py-2 rounded hover:bg-secondary-200 hover:text-white flex items-center shadow;
 }
 .input{
     @apply p-2 rounded text-sm text-slate-900 mt-2;
