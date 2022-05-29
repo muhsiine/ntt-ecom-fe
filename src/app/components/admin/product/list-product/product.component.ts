@@ -1,4 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  OnInit
+} from '@angular/core';
+import {
+  Product
+} from 'src/app/models/product';
+import {
+  ProductService
+} from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-product',
@@ -6,28 +15,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./product.component.scss']
 })
 export class ProductComponent implements OnInit {
- 
-  showDeleteModal:boolean=false;
-  products: { productName: string,category:string,color:string,price:number}[] = [
-    { productName: "product1",category:"category1",color:"color1",price:200},
-    { productName: "product1",category:"category1",color:"color1",price:200},
-    { productName: "product1",category:"category1",color:"color1",price:200},
-    { productName: "product1",category:"category1",color:"color1",price:200},
-    { productName: "product1",category:"category1",color:"color1",price:200},
-    { productName: "product1",category:"category1",color:"color1",price:200},
-    { productName: "product1",category:"category1",color:"color1",price:200},
-    { productName: "product1",category:"category1",color:"color1",price:200},
-  ];
 
-  constructor() { }
+  showDeleteModal: boolean = false;
+  products: Product[] = [];
+
+  constructor(private productService: ProductService) {}
 
   ngOnInit(): void {
+    this.productService.getAll().subscribe(res => this.products = res);
   }
 
-  deleteProduct(id:any){
-     this.showDeleteModal=true;
+  ShowDeleteProduct(id: any) {
+    this.showDeleteModal = true;
   }
-  closeDeleteModal(){
-this.showDeleteModal=false;
+  closeDeleteModal() {
+    this.showDeleteModal = false;
   }
 }

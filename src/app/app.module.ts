@@ -31,7 +31,6 @@ export function HttpLoaderFactory(http: HttpClient){
     HomeComponent,
     RegisterComponent,
     ForgetPasswordComponent,
-    AdminSidebarComponent,
     GlobalComponent
   ],
   imports: [

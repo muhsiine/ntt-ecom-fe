@@ -28,3 +28,10 @@
 a{
     @apply text-secondary-600 hover:text-secondary-200 text-sm;
 }
+.form-group {
+    @apply flex flex-col my-4;
+}
+.form-group input,.form-group select{
+
+    @apply input border ;
+}

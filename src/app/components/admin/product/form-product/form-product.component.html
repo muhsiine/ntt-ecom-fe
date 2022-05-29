@@ -1,1 +1,37 @@
-<p>form-product works!</p>
+<form class="border rounded shadow p-4">
+  <h4 class="text-xl ">Add Product</h4>
+
+  <div class="form-group">
+    <label>Name :</label>
+    <input />
+  </div>
+
+  <div class="form-group">
+    <label>Description :</label>
+    <input />
+  </div>
+  <div class="form-group">
+    <label>Price :</label>
+    <input />
+  </div>
+  <div class="form-group">
+    <label>Category :</label>
+    <select>
+      <option *ngFor="let category of categories" value="{{category.category_id}}">{{category.name}}</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label>Pictures :</label>
+    <input id="file_input"
+      class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
+      type="file" />
+
+    <p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">SVG, PNG, JPG or GIF (MAX. 800x400px).
+    </p>
+
+
+
+  </div>
+  <button class="btn ml-auto">Save</button>
+
+</form>
