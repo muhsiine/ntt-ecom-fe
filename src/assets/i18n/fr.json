@@ -1,0 +1,30 @@
+{
+  "goback": "Retour",
+  "auth.or": "OU",
+  "auth.username": "Surnom",
+  "auth.password": "Mot de passe",
+  "auth.enter.username": "Entrer votre surnom",
+  "auth.enter.password": "Entrer votre mot de passe",
+  "auth.enter.email": "Entrer votre email",
+
+  "auth.login.title": "Connecter",
+  "auth.login.with": "Se connecter avec {{company}}",
+  "auth.login.forgotpassword": "Mot de passe oublié ?",
+  "auth.login.button.login": "Se connecter",
+  "auth.login.register.label": "Vous n'avez pas un compte !",
+  "auth.login.register.href": "Creer un .",
+
+  "auth.register.title": "S'inscrire",
+  "auth.register.with": "Creer compte avec {{company}}",
+  "auth.register.button": "Creer compte",
+  "auth.register.login.label": "Déja inscrit !",
+  "auth.register.login.href": "Se connecté",
+
+  "auth.forgotpassword.title": "Mot de passe oublié",
+  "auth.forgotpassword.button": "Enovoyé un email",
+  "auth.forgotpassword.login.label": "Je me r'appel à mon mot de passe !",
+  "auth.forgotpassword.login.href": "Se connecter",
+
+  "navbar.home": "Accueil"
+
+}
