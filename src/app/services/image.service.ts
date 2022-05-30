@@ -13,8 +13,8 @@ export class ImageService {
 
   constructor(private http : HttpClient) { }
 
-  getImageByProduct(product_id : number) : Observable<Image>{
-    return this.http.get<Image>(`${this.baseUrl}/product/${product_id}`);
+  getImageByProduct(product_id : number) : Observable<Image[]>{
+    return this.http.get<Image[]>(`${this.baseUrl}/product/${product_id}`);
   }
 
 }
