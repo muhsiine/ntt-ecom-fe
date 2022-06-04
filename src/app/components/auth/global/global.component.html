@@ -1,0 +1,13 @@
+<div class="login-page">
+    <img class="w-24 mt-12" src="https://themesbrand.com/velzon/html/saas/assets/images/logo-light.png" alt="Logo">
+    <form class="relative p-8 mt-8 bg-back  text-dark rounded shadow-xl" style="width: 400px;">
+        <a class="absolute top-2 left-2" routerLink="..">
+            <i class="bi bi-caret-left-fill"></i>
+            {{ 'goback' | translate }}
+        </a>
+        <select class="absolute top-2 right-2" [(ngModel)]="code" [ngModelOptions]="{standalone: true}" (ngModelChange)='changeLanguage()' >
+            <option [value]="language.code" *ngFor="let language of languages">{{language.label}}</option>
+        </select>
+        <ng-content></ng-content>
+    </form>
+</div>

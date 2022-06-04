@@ -12,9 +12,7 @@ import { HomeComponent } from './components/home/home/home.component';
 import { RegisterComponent } from './components/auth/register/register.component';
 import { ForgetPasswordComponent } from './components/auth/forget-password/forget-password.component';
 import { AdminSidebarComponent } from './components/shared/admin-sidebar/admin-sidebar.component';
-import { ProductCardComponent } from './components/home/home/product-card/product-card.component';
-import { EventBannerComponent } from './components/home/home/event-banner/event-banner.component';
-import { HomeModule } from './components/home/home/home.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,13 +24,26 @@ import { HomeModule } from './components/home/home/home.module';
     RegisterComponent,
     ForgetPasswordComponent,
     AdminSidebarComponent,
+    GlobalComponent,
+    AdminSidebarComponent,
     ProductCardComponent,
     EventBannerComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HomeModule
+    HomeModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    TranslateModule.forRoot({
+      defaultLanguage: 'en',
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
