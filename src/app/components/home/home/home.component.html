@@ -1,9 +1,14 @@
-<nav class="p-4 bg-cyan-600 text-white shadow-lg flex justify-between" >
-    <h2 class="text-lg font-medium">NTT Squad</h2>
-    <div>
-        <a class="hover:text-slate-300" routerLink="/">Home</a>
+<div class="absolute">
+    <app-sidebar></app-sidebar>
+</div>
+<app-navbar class="sticky top-0 z-50"></app-navbar>
+<div class="carousel ">
+    <app-carousel></app-carousel>
+</div>
+
+<div class="relative p-8  bg-slate-500  ">
+    <div class="flex m-2 space-x-8 bg-zinc-700 justify-center overflow-auto">
+            <product-card *ngFor="let number of numbers"></product-card>
     </div>
-    <div>
-        <a class="btn" routerLink="/login">Login</a>
-    </div>
-</nav>
+</div>
+<app-footer></app-footer>

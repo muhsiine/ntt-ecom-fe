@@ -12,7 +12,9 @@ import { HomeComponent } from './components/home/home/home.component';
 import { RegisterComponent } from './components/auth/register/register.component';
 import { ForgetPasswordComponent } from './components/auth/forget-password/forget-password.component';
 import { AdminSidebarComponent } from './components/shared/admin-sidebar/admin-sidebar.component';
-
+import { ProductCardComponent } from './components/home/home/product-card/product-card.component';
+import { EventBannerComponent } from './components/home/home/event-banner/event-banner.component';
+import { HomeModule } from './components/home/home/home.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,11 +25,14 @@ import { AdminSidebarComponent } from './components/shared/admin-sidebar/admin-s
     HomeComponent,
     RegisterComponent,
     ForgetPasswordComponent,
-    AdminSidebarComponent
+    AdminSidebarComponent,
+    ProductCardComponent,
+    EventBannerComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
