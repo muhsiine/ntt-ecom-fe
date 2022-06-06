@@ -15,6 +15,7 @@ import { AdminSidebarComponent } from './components/shared/admin-sidebar/admin-s
 import { FormsModule } from '@angular/forms';
 import { GlobalComponent } from './components/auth/global/global.component';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 export function HttpLoaderFactory(http: HttpClient){
@@ -38,6 +39,7 @@ export function HttpLoaderFactory(http: HttpClient){
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     TranslateModule.forRoot({
       defaultLanguage: 'en',
       loader: {

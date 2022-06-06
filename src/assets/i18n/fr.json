@@ -3,9 +3,14 @@
   "auth.or": "OU",
   "auth.username": "Surnom",
   "auth.password": "Mot de passe",
+  "auth.repeatpassword": "Répéter le mot de passe",
   "auth.enter.username": "Entrer votre surnom",
   "auth.enter.password": "Entrer votre mot de passe",
   "auth.enter.email": "Entrer votre email",
+  "auth.enter.firstname": "Entrer votre nom",
+  "auth.enter.lastname":"Entrer votre prenom",
+  "auth.enter.phonenumber":"Entrez votre numéro de téléphone",
+  "auth.enter.imageurl":"Téléchargez votre photo",
 
   "auth.login.title": "Connecter",
   "auth.login.with": "Se connecter avec {{company}}",
@@ -19,6 +24,7 @@
   "auth.register.button": "Creer compte",
   "auth.register.login.label": "Déja inscrit !",
   "auth.register.login.href": "Se connecté",
+
 
   "auth.forgotpassword.title": "Mot de passe oublié",
   "auth.forgotpassword.button": "Enovoyé un email",
