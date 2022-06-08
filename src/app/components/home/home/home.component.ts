@@ -6,12 +6,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   numbers: number[];
-
+  sidebar =document.getElementById("#sidebars");
   constructor() {
-    this.numbers = Array(5).fill(0).map((x,i)=>i);
+    this.numbers = Array(6).fill(0).map((x,i)=>i);
    }
 
   ngOnInit(): void {
   }
-  
+
+  hideSidebar(){
+    console.log(this.sidebar);    //this.sidebar.style.display = "none";
+  }
 }

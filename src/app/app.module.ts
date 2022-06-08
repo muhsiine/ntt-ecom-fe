@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+  import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -12,6 +12,13 @@ import { HomeComponent } from './components/home/home/home.component';
 import { RegisterComponent } from './components/auth/register/register.component';
 import { ForgetPasswordComponent } from './components/auth/forget-password/forget-password.component';
 import { AdminSidebarComponent } from './components/shared/admin-sidebar/admin-sidebar.component';
+import { GlobalComponent } from './components/auth/global/global.component';
+import { ProductCardComponent } from './components/home/home/product-card/product-card.component';
+import { EventBannerComponent } from './components/home/home/event-banner/event-banner.component';
+import { FormsModule } from '@angular/forms';
+import { HomeModule } from './components/home/home/home.module';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core/public_api';
 
 @NgModule({
   declarations: [

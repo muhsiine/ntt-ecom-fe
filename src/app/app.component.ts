@@ -9,7 +9,7 @@ export class AppComponent {
   title = 'ntt-ecom-fe';
 
   constructor(private translateService: TranslateService){
-    const lang = localStorage.getItem('locale') || "en"; 
+    const lang = localStorage.getItem('locale') || "en";
     translateService.setDefaultLang(lang);
     translateService.use(lang);
   }
