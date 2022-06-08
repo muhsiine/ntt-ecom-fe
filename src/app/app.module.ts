@@ -18,7 +18,8 @@ import { EventBannerComponent } from './components/home/home/event-banner/event-
 import { FormsModule } from '@angular/forms';
 import { HomeModule } from './components/home/home/home.module';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { TranslateLoader, TranslateModule } from '@ngx-translate/core/public_api';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 @NgModule({
   declarations: [
@@ -56,3 +57,7 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core/public_api
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
+  return new TranslateHttpLoader(http);
+}
