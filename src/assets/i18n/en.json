@@ -20,6 +20,13 @@
             "phonenumber":"Enter your Phone Number",
             "imageurl":"ImageUrl"
         },
+        "required":{
+          "firstname": "First Name is empty",
+          "lastname":"Last Name is empty",
+          "password": "Password is required",
+          "email": "Email is required",
+          "phonenumber":"PhoneNumber is required (only numbers are allowed)"
+        },
         "login":{
             "title": "Sign in",
             "with": "Login with {{company}}",

@@ -31,6 +31,12 @@
   "auth.forgotpassword.login.label": "Je me r'appel à mon mot de passe !",
   "auth.forgotpassword.login.href": "Se connecter",
 
+  "auth.required.firstname": "Le prénom est vide",
+  "auth.required.lastname": "Le nom est vide",
+  "auth.required.password": "Le mot de passe est obligatoire",
+  "auth.required.email": "L'email est obligatoire",
+  "auth.required.phonenumber": "Le numéro de téléphone est obligatoire (seuls les chiffres sont autorisés)",
+
   "navbar.home": "Accueil"
 
 }
