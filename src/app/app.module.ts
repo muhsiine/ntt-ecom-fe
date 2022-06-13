@@ -11,10 +11,13 @@ import { SidebarComponent } from './components/shared/sidebar/sidebar.component'
 import { HomeComponent } from './components/home/home/home.component';
 import { RegisterComponent } from './components/auth/register/register.component';
 import { ForgetPasswordComponent } from './components/auth/forget-password/forget-password.component';
-import { AdminSidebarComponent } from './components/shared/admin-sidebar/admin-sidebar.component';
 import { FormsModule } from '@angular/forms';
 import { GlobalComponent } from './components/auth/global/global.component';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { NotificationComponent } from './components/shared/notification/notification.component';
+import { NotFoundComponent } from './components/shared/not-found/not-found.component';
+import { NotPermitedComponent } from './components/shared/not-permited/not-permited.component';
+import { DataNotFoundComponent } from './components/shared/data-not-found/data-not-found.component';
 
 
 
@@ -31,7 +34,11 @@ export function HttpLoaderFactory(http: HttpClient){
     HomeComponent,
     RegisterComponent,
     ForgetPasswordComponent,
-    GlobalComponent
+    GlobalComponent,
+    NotificationComponent,
+    NotFoundComponent,
+    NotPermitedComponent,
+    DataNotFoundComponent
   ],
   imports: [
     BrowserModule,
