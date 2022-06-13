@@ -15,6 +15,10 @@ import { AdminSidebarComponent } from './components/shared/admin-sidebar/admin-s
 import { FormsModule } from '@angular/forms';
 import { GlobalComponent } from './components/auth/global/global.component';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { NotificationComponent } from './components/shared/notification/notification.component';
+import { NotFoundComponent } from './components/shared/not-found/not-found.component';
+import { NotPermitedComponent } from './components/shared/not-permited/not-permited.component';
+import { DataNotFoundComponent } from './components/shared/data-not-found/data-not-found.component';
 
 
 export function HttpLoaderFactory(http: HttpClient){
@@ -31,7 +35,11 @@ export function HttpLoaderFactory(http: HttpClient){
     RegisterComponent,
     ForgetPasswordComponent,
     AdminSidebarComponent,
-    GlobalComponent
+    GlobalComponent,
+    NotificationComponent,
+    NotFoundComponent,
+    NotPermitedComponent,
+    DataNotFoundComponent
   ],
   imports: [
     BrowserModule,
