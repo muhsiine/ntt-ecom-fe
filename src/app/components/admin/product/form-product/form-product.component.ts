@@ -10,6 +10,7 @@ import { ProductService } from 'src/app/services/product.service';
 })
 export class FormProductComponent implements OnInit {
   categories:Category[]=[];
+  body: any={};
   constructor(private categoryService:CategoryService,private productService:ProductService) { }
 
   ngOnInit(): void {
@@ -17,5 +18,22 @@ export class FormProductComponent implements OnInit {
 this.categoryService.getAll().subscribe(res => this.categories = res)
   }
   
+  AddProduct(value: any){
 
-}
+       this.body = {
+        productId: value.productId,
+        name:value.name,
+        price: value.price,
+        description:value.description,
+        category:value.category,
+
+      }
+  
+      this.productService.saveProduct(this.body)
+        .subscribe(response => {
+          console.log(response)
+        })
+    } 
+  }
+
+
