@@ -39,6 +39,8 @@
       }
   },  
   "navbar":{
-      "home": "Accueil"
+      "home": "Accueil",
+      "product": "Produit",
+      "login": "Se connecter"
   }
 }
