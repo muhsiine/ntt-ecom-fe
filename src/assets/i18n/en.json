@@ -1,5 +1,6 @@
 {
     "goback": "Go back",
+    
     "auth":{
         "or": "OR",
         "username": "Username",
@@ -57,6 +58,8 @@
     },
 
     "navbar":{
-        "home": "Home"
+        "home": "Home",
+        "product": "Product",
+        "login": "Login"
     }
 }

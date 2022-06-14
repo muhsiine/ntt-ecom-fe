@@ -7,45 +7,63 @@
 @import url('http://fonts.cdnfonts.com/css/sofia-pro');
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css");
 
-*{
+* {
     font-family: 'Sofia Pro', sans-serif;
 }
 
+/* scroll */
+body::-webkit-scrollbar {
+    @apply w-2;
+}
+
+body::-webkit-scrollbar-track {
+    @apply bg-slate-100;
+}
+
+body::-webkit-scrollbar-thumb {
+    @apply bg-secondary-600;
+}
+
+body{
+    @apply dark:bg-slate-700 dark:text-slate-300;
+}
+
 /* Customized classes */
-.navbar{
-    @apply p-4 text-center bg-slate-500 text-white shadow-lg;
+.navbar {
+    @apply p-4 text-center bg-slate-600 text-white shadow-lg;
 }
-.btn{
-    @apply bg-secondary-600 text-white px-4 py-2 rounded hover:bg-secondary-200 hover:text-white flex items-center shadow;
+
+.btn {
+    @apply bg-secondary-600 text-white dark:text-white px-4 py-2 rounded hover:bg-secondary-200 hover:text-white dark:bg-slate-800 dark:hover:bg-slate-900 flex items-center shadow;
 }
-.input{
-    @apply p-2 rounded text-sm text-slate-900 mt-2;
+
+.input {
+    @apply p-2 rounded text-sm text-slate-900 dark:bg-slate-600 dark:border-slate-900 dark:text-slate-400 mt-2;
 }
-small{
+
+small {
     @apply text-red-500;
 }
+
 .input.ng-touched.ng-invalid {
     @apply border-red-500;
- }
- .input:active {
-    @apply border-yellow-200;
- }
-.input.ng-touched.ng-valid {
-    @apply border-green-500;
- }
-.line{
-    @apply w-full bg-secondary-600 rounded my-4 ;
+}
+
+.line {
+    @apply w-full bg-secondary-600 dark:bg-slate-900 rounded my-4;
     height: 2px;
 }
-a{
-    @apply text-secondary-600 hover:text-secondary-200 text-sm;
+
+a {
+    @apply text-secondary-600 hover:text-secondary-200 dark:text-gray-200 dark:hover:text-gray-400 text-sm;
 }
 
 .form-group {
     @apply flex flex-col my-4;
 }
-.form-group input,.form-group select{
 
-    @apply input border ;
+.form-group input,
+.form-group select {
+
+    @apply input border;
 }
-

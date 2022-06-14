@@ -1,28 +1,33 @@
 <app-auth-global>
-    <h3 class="text-2xl mb-4 font-bold text-center">{{'auth.login.title' | translate}}</h3>
-    <button class="bg-white border w-full mt-2 text-sm px-4 py-2 rounded hover:bg-slate-200 shadow">
-        <i class="bi bi-google mr-1 text-base"></i>
-        {{'auth.login.with' | translate:{company:'Google'} }}
-    </button>
-    <div class="flex items-center my-2">
-        <div class="line"></div>
-        <p class="px-2">{{ 'auth.or' | translate }}</p>
-        <div class="line"></div>
-    </div>
-    <div class="flex flex-col mb-4">
-        <label class="">{{ 'auth.username' | translate }}</label>
-        <input class="input border-2 border-secondary-600" type="text" placeholder="{{'auth.enter.username' | translate}}">
-    </div>
-    <div class="flex flex-col mb-4">
-        <div class="flex justify-between">
-            <label class="">{{ 'auth.password' | translate }}</label>
-            <a routerLink="/forgot-password">{{ 'auth.login.forgotpassword' | translate }}</a>
+    <form (ngSubmit)="onLoginClick()">
+        <h3 class="text-2xl mb-4 font-bold text-center">{{'auth.login.title' | translate}}</h3>
+        <button type="button" (click)="onGoogleLoginClick()" class="bg-white dark:bg-slate-800 dark:hover:bg-slate-900 dark:border-none border w-full mt-2 text-sm px-4 py-2 rounded hover:bg-slate-200 shadow">
+            <i class="bi bi-google mr-1 text-base"></i>
+            {{'auth.login.with' | translate:{company:'Google'} }}
+        </button>
+        <div class="flex items-center my-2">
+            <div class="line"></div>
+            <p class="px-2">{{ 'auth.or' | translate }}</p>
+            <div class="line"></div>
         </div>
-        <input class="input border-2 border-secondary-600" type="password" placeholder="{{'auth.enter.password' | translate}}">
-    </div>
-    <button class="bg-secondary-600 w-full mt-2 text-back px-4 py-2 rounded hover:bg-secondary-200 shadow">{{ 'auth.login.button.login' | translate }}</button>
-    <p class="text-sm text-center mt-3">
-        {{ 'auth.login.register.label' | translate }}
-        <a routerLink="/register">{{ 'auth.login.register.href' | translate }}</a>
-    </p>
+        <div *ngIf="messageError" class="text-center w-auto bg-red-500 text-white text-sm p-4 mb-4 rounded">
+            {{messageError}}
+        </div>
+        <div class="flex flex-col mb-4">
+            <label class="">{{ 'auth.username' | translate }}</label>
+            <input [(ngModel)]="user.username" name="username" [class]="messageError && 'border-red-600 text-red-500'" class="input border-2 border-secondary-600 " type="text" placeholder="{{'auth.enter.username' | translate}}">
+        </div>
+        <div class="flex flex-col mb-4">
+            <div class="flex justify-between">
+                <label class="">{{ 'auth.password' | translate }}</label>
+                <a routerLink="/forgot-password">{{ 'auth.login.forgotpassword' | translate }}</a>
+            </div>
+            <input [(ngModel)]="user.password" name="password" [class]="messageError && 'border-red-600 text-red-500'" class="input border-2 border-secondary-600" type="password" placeholder="{{'auth.enter.password' | translate}}">
+        </div>
+        <button type="submit" class="bg-secondary-600 dark:bg-slate-800 dark:hover:bg-slate-900 w-full mt-2 text-back px-4 py-2 rounded hover:bg-secondary-200 shadow">{{ 'auth.login.button.login' | translate }}</button>
+        <p class="text-sm text-center mt-3">
+            {{ 'auth.login.register.label' | translate }}
+            <a routerLink="/register">{{ 'auth.login.register.href' | translate }}</a>
+        </p>
+    </form>
 </app-auth-global>

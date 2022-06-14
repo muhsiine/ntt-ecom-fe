@@ -1,5 +1,5 @@
-<div class="w-72 p-4 bg-secondary-600 h-screen flex flex-col justify-between">
-  <div class="w-full flex  rounded flex-col">
+<div class="w-72 p-4 bg-secondary-600 dark:bg-slate-800 h-screen flex flex-col justify-between">
+  <div class="w-full flex  flex-col">
     <a class="sidebar-link" routerLink="/admin/product" routerLinkActive="sidebar-link-active">
       <i class="bi bi-archive-fill"></i>
       Product
@@ -9,14 +9,22 @@
       Order
     </a>
   </div>
-  <div class="w-full flex rounded justify-between items-center">
-    <img class="photo rounded-full" alt="Steve Schoger" width="48" height="48"
-      src="https://cdn.dribbble.com/users/42578/avatars/small/d0ac345ce3f79bf2c2e7e64527bbf342.jpg?1530900788">
-    <div class="flex flex-col">
-        <label class="text-white">FullName</label>
-        <a class="text-gray-300 cursor-pointer">View Profile</a>
+  <div class="w-full flex  rounded flex-col">
+    <div class="w-full flex rounded justify-between items-center">
+      <img class="photo rounded-full" alt="Steve Schoger" width="48" height="48"
+        src="https://cdn.dribbble.com/users/42578/avatars/small/d0ac345ce3f79bf2c2e7e64527bbf342.jpg?1530900788">
+      <div class="flex flex-col">
+          <label class="text-white">FullName</label>
+          <a class="text-gray-300 cursor-pointer">View Profile</a>
+      </div>
+      <div>
+        <app-mode-lang class="flex flex-col items-center" [bgDark]="true"></app-mode-lang>
+      </div>
+      
     </div>
-    <a class="text-white text-2xl cursor-pointer"><i class="bi bi-gear"></i></a>
-    
+    <a class="bg-white dark:bg-slate-700 dark:hover:bg-slate-600 p-3 rounded mt-4 w-full" routerLink="/" >
+      <i class="bi bi-caret-left-fill"></i>
+      Logout
+    </a>
   </div>
 </div>
