@@ -27,8 +27,9 @@
 </div>
     <div class="flex flex-col mb-4">
         <div class="flex justify-between">
-            <label class="">{{ 'auth.password' | translate }}</label>
+            <label class="">{{ 'auth.password'  }}</label>
         </div>
+
         <input class="input border-2 border-secondary-600" type="password" formControlName="password" placeholder="{{'auth.enter.password' | translate}}">
         <small class="text-danger" *ngIf="f['password']?.['invalid'] &&f['password']?.['touched']">{{'auth.required.password' | translate}}</small>
       </div>
@@ -38,14 +39,14 @@
       </div>
       <input class="input border-2 border-secondary-600" type="password" formControlName="repassword" placeholder="{{'auth.enter.repeatpassword' | translate}}">
       <small class="text-danger" *ngIf="f['repassword']?.['invalid'] &&f['repassword']?.['touched']">{{'auth.required.password' | translate}}</small>
-    </div>
+   </div>
 </form>
     <div class="text-center mt-6">
         <button class="bg-secondary-600 w-full text-back px-4 py-2 rounded hover:bg-secondary-200 shadow" [disabled]="registerForm.invalid" (click)="clicksub()"  >{{ 'auth.register.button' | translate }}</button>
     </div>
     <!-- <div class="line"></div> -->
     <p class="text-sm text-center mt-3">
-        {{ 'auth.register.login.label' | translate }}
-        <a routerLink="/login">{{ 'auth.register.login.href' | translate }}</a>
+        {{ 'auth.register.login.label'  }}
+        <a routerLink="/login">{{ 'auth.register.login.href'  }}</a>
     </p>
 </app-auth-global>
