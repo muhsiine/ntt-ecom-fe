@@ -21,6 +21,18 @@
 .input{
     @apply p-2 rounded text-sm text-slate-900 mt-2;
 }
+small{
+    @apply text-red-500;
+}
+.input.ng-touched.ng-invalid {
+    @apply border-red-500;
+ }
+ .input:active {
+    @apply border-yellow-200;
+ }
+.input.ng-touched.ng-valid {
+    @apply border-green-500;
+ }
 .line{
     @apply w-full bg-secondary-600 rounded my-4 ;
     height: 2px;
@@ -28,6 +40,7 @@
 a{
     @apply text-secondary-600 hover:text-secondary-200 text-sm;
 }
+
 .form-group {
     @apply flex flex-col my-4;
 }
@@ -35,3 +48,4 @@ a{
 
     @apply input border ;
 }
+

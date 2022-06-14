@@ -19,10 +19,12 @@ import { HomeModule } from './components/home/home/home.module';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { ReactiveFormsModule } from '@angular/forms';
 import { NotificationComponent } from './components/shared/notification/notification.component';
 import { NotFoundComponent } from './components/shared/not-found/not-found.component';
 import { NotPermitedComponent } from './components/shared/not-permited/not-permited.component';
 import { DataNotFoundComponent } from './components/shared/data-not-found/data-not-found.component';
+
 
 
 @NgModule({
@@ -50,6 +52,7 @@ import { DataNotFoundComponent } from './components/shared/data-not-found/data-n
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     TranslateModule.forRoot({
       defaultLanguage: 'en',
       loader: {

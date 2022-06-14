@@ -4,11 +4,28 @@
         "or": "OR",
         "username": "Username",
         "password": "Password",
+        "repeatpassword": "Repeat Password",
+        "firstname": "FirstName",
+        "lastname":"LastName",
+        "phonenumber":"PhoneNumber",
+        "imageurl":"Upload your picture",
         "email": "Email",
         "enter": {
             "username": "Enter username",
             "password": "Enter password",
-            "email": "Enter your email"
+            "repeatpassword": "Repeat Password",
+            "email": "Enter your email",
+            "firstname": "Enter your FirstName",
+            "lastname":"Enter your LastName",
+            "phonenumber":"Enter your Phone Number",
+            "imageurl":"ImageUrl"
+        },
+        "required":{
+          "firstname": "First Name is empty",
+          "lastname":"Last Name is empty",
+          "password": "Password is required",
+          "email": "Email is required",
+          "phonenumber":"PhoneNumber is required (only numbers are allowed)"
         },
         "login":{
             "title": "Sign in",
@@ -37,7 +54,7 @@
                 "href": "Login"
             }
         }
-    },  
+    },
 
     "navbar":{
         "home": "Home"
