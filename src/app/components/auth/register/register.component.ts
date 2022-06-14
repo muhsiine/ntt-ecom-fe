@@ -17,7 +17,8 @@ export class RegisterComponent implements OnInit {
       Validators.pattern('^\\s*(?:\\+?(\\d{1,3}))?[-. (]*(\\d{3})[-. )]*(\\d{3})[-. ]*(\\d{4})(?: *x(\\d+))?\\s*$')
     ]),
     password: new  FormControl(null, Validators.required),
-    repassword: new  FormControl(null, Validators.required),
+    repassword: new  FormControl(null, [Validators.required]),
+
   })
 
 get f(): any
