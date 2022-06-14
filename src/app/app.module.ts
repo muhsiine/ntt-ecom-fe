@@ -24,6 +24,7 @@ import { NotificationComponent } from './components/shared/notification/notifica
 import { NotFoundComponent } from './components/shared/not-found/not-found.component';
 import { NotPermitedComponent } from './components/shared/not-permited/not-permited.component';
 import { DataNotFoundComponent } from './components/shared/data-not-found/data-not-found.component';
+import { SharedModule } from './components/shared/shared.module';
 
 
 
@@ -46,6 +47,7 @@ import { DataNotFoundComponent } from './components/shared/data-not-found/data-n
     DataNotFoundComponent
   ],
   imports: [
+    SharedModule,
     BrowserModule,
     AppRoutingModule,
     HomeModule,
@@ -62,7 +64,9 @@ import { DataNotFoundComponent } from './components/shared/data-not-found/data-n
       }
     })
   ],
-  providers: [],
+  providers: [
+    
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

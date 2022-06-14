@@ -8,6 +8,7 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class GlobalComponent implements OnInit {
 
+  dark:boolean = false;
   code:string = "en";
   languages:{code:string, label:string}[] = [
     {code: 'en', label: 'Eng'},
@@ -18,6 +19,16 @@ export class GlobalComponent implements OnInit {
 
   ngOnInit(): void {
     this.code = localStorage.getItem('locale') || "en"; 
+  }
+
+  switchDarkMode(): void{
+    this.dark = !this.dark;
+    if(this.dark){
+      document.body.classList.add('dark');
+    }
+    else{
+      document.body.classList.remove('dark');
+    }
   }
 
   public changeLanguage() {

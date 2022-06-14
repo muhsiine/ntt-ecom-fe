@@ -5,10 +5,7 @@
         <a class="hover:text-slate-300 text-base"  routerLink="/admin/product" routerLinkActive="font-bold dark:text-white">{{ 'navbar.product' | translate }}</a>
     </div>
     <div class="flex items-center">
-        <i (click)="switchDarkMode()" [class]="dark ? 'bi-sun-fill' : 'bi-moon-stars-fill'" class="bi mr-3 cursor-pointer dark:text-white"></i>
-        <select class="mr-2 dark:bg-slate-700" [(ngModel)]="code" [ngModelOptions]="{standalone: true}" (ngModelChange)='changeLanguage()'>
-            <option [value]="language.code" *ngFor="let language of languages">{{language.label}}</option>
-        </select>
+        <app-mode-lang></app-mode-lang>
         <a class="btn" routerLink="/login">{{ 'navbar.login' | translate }}</a>
     </div>
 </nav>
