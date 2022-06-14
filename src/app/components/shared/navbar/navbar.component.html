@@ -1,9 +1,11 @@
-<nav class="p-4 bg-back text-dark shadow-lg flex justify-between" >
+<nav class="p-4 bg-back dark:bg-slate-700 dark:text-white text-dark shadow-lg flex justify-between items-center" >
     <h2 class="text-lg font-medium">NTT Squad</h2>
     <div>
-        <a class="hover:text-slate-300" routerLink="/">Home</a>
+        <a class="hover:text-slate-300 mr-4 text-base" routerLink="/" routerLinkActive="font-bold dark:text-white">Home</a>
+        <a class="hover:text-slate-300 text-base"  routerLink="/admin/product" routerLinkActive="font-bold dark:text-white">Product</a>
     </div>
-    <div>
+    <div class="flex items-center">
+        <i (click)="switchDarkMode()" [class]="dark ? 'bi-sun-fill' : 'bi-moon-stars-fill'" class="bi mr-3 cursor-pointer dark:text-white"></i>
         <a class="btn" routerLink="/login">Login</a>
     </div>
 </nav>

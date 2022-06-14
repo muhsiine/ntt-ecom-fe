@@ -11,12 +11,14 @@
     font-family: 'Sofia Pro', sans-serif;
 }
 
+/* scroll */
+
 /* Customized classes */
 .navbar{
     @apply p-4 text-center bg-slate-500 text-white shadow-lg;
 }
 .btn{
-    @apply bg-secondary-600 text-white px-4 py-2 rounded hover:bg-secondary-200 hover:text-white flex items-center shadow;
+    @apply bg-secondary-600 text-white dark:text-white px-4 py-2 rounded hover:bg-secondary-200 hover:text-white dark:bg-secondary-200 dark:hover:bg-secondary-600 flex items-center shadow;
 }
 .input{
     @apply p-2 rounded text-sm text-slate-900 mt-2;
@@ -26,7 +28,7 @@
     height: 2px;
 }
 a{
-    @apply text-secondary-600 hover:text-secondary-200 text-sm;
+    @apply text-secondary-600 hover:text-secondary-200 dark:text-gray-200 dark:hover:text-gray-400 text-sm;
 }
 .form-group {
     @apply flex flex-col my-4;

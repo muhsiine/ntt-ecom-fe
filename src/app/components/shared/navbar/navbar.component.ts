@@ -7,9 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
+  dark:boolean = false;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  switchDarkMode(): void{
+    this.dark = !this.dark;
+    if(this.dark){
+      document.body.classList.add('dark');
+    }
+    else{
+      document.body.classList.remove('dark');
+    }
   }
 
 }
