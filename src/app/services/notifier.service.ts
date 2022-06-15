@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { NotificationComponent } from '../components/shared/notification/notification.component';
+import { NotificationComponent } from '../components/notification/notification.component';
 
 @Injectable({
   providedIn: 'root'

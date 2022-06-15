@@ -1,15 +1,15 @@
 import { Category } from "./category";
 import { User } from "./user";
 
-export interface Product{
-  id : number;
-  name : string;
-  description : string;
-  category : Category;
-  price  : number;
-  quantity : number;
-  created_at : Date ;
-  modified_at : Date | null;
-  deleted_at : Date | null;
-  user ?: User
+export class Product{
+  id : number = 0;
+  name : string = '';
+  description : string = '';
+  category : Category = new Category();
+  price  : number = 0;
+  quantity : number = 0;
+  created_at : Date = new Date();
+  modified_at : Date | null = null;
+  deleted_at : Date | null = null;
+  user ?: User = new User();
 }

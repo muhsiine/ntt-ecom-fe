@@ -1,63 +1,62 @@
 {
     "goback": "Go back",
-    
-    "auth":{
+    "auth": {
         "or": "OR",
+        "firstname": "FirstName",
+        "lastname": "LastName",
+        "email": "Email",
         "username": "Username",
         "password": "Password",
         "repeatpassword": "Repeat Password",
-        "firstname": "FirstName",
-        "lastname":"LastName",
-        "phonenumber":"PhoneNumber",
-        "imageurl":"Upload your picture",
-        "email": "Email",
+        "phonenumber": "PhoneNumber",
+        "imageurl": "Upload your picture",
         "enter": {
             "username": "Enter username",
             "password": "Enter password",
             "repeatpassword": "Repeat Password",
             "email": "Enter your email",
             "firstname": "Enter your FirstName",
-            "lastname":"Enter your LastName",
-            "phonenumber":"Enter your Phone Number",
-            "imageurl":"ImageUrl"
+            "lastname": "Enter your LastName",
+            "phonenumber": "Enter your Phone Number",
+            "imageurl": "ImageUrl"
         },
-        "required":{
-          "firstname": "First Name is empty",
-          "lastname":"Last Name is empty",
-          "password": "Password is required",
-          "email": "Email is required",
-          "phonenumber":"PhoneNumber is required (only numbers are allowed)"
-        },
-        "login":{
+        "login": {
             "title": "Sign in",
             "with": "Login with {{company}}",
             "forgotpassword": "Forgot password ?",
             "button.login": "Login",
-            "register":{
+            "register": {
                 "label": "I don't have an account !",
                 "href": "Register"
             }
         },
-        "register":{
+        "register": {
             "title": "Register",
             "with": "Create an account with {{company}}",
             "button": "Create an account",
-            "login":{
+            "login": {
                 "label": "Already have an account !",
                 "href": "Login"
             }
         },
-        "forgotpassword":{
+        "required": {
+            "firstname": "First Name is empty",
+            "lastname": "Last Name is empty",
+            "password": "Password is required",
+            "email": "Email format incorrect",
+            "username": "Username format incorrect",
+            "phonenumber": "PhoneNumber is required (only numbers are allowed)"
+        },
+        "forgotpassword": {
             "title": "Forgot password",
             "button": "Send email",
-            "login":{
+            "login": {
                 "label": "I remember my password !",
                 "href": "Login"
             }
         }
     },
-
-    "navbar":{
+    "navbar": {
         "home": "Home",
         "product": "Product",
         "login": "Login"

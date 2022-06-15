@@ -46,7 +46,7 @@ small {
 }
 
 .input.ng-touched.ng-invalid {
-    @apply border-red-500;
+    @apply border-red-500 placeholder:text-red-500;
 }
 
 .line {
