@@ -1,11 +1,11 @@
 import { User } from "./user";
 
-export interface Order{
-  order_id : number;
-  user ?: User;
-  status_id : number;
-  created_at  : Date;
-  modified_at : Date | null;
-  order_amount : number;
+export class Order{
+  order_id : number = 0;
+  user ?: User = new User();
+  status_id : number = 0;
+  created_at  : Date = new Date();
+  modified_at : Date | null = null;
+  order_amount : number = 0;
   }
 

@@ -1,46 +1,64 @@
 {
-  "goback": "Retour",
-  "auth":{
-      "or": "OU",
-      "username": "Surnom",
-      "password": "Mot de passe",
-      "email": "Email",
-      "enter": {
-          "username": "Entrer votre surnom",
-          "password": "Entrer votre mot de passe",
-          "email": "Entrer votre email"
-      },
-      "login":{
-          "title": "Connecter",
-          "with": "Se connecter avec {{company}}",
-          "forgotpassword": "Mot de passe oublié ?",
-          "button.login": "Se connecter",
-          "register":{
-              "label": "Vous n'avez pas un compte !",
-              "href": "Creer un ."
-          }
-      },
-      "register":{
-          "title": "S'inscrire",
-          "with": "Creer compte avec {{company}}",
-          "button": "Creer compte",
-          "login":{
-              "label": "Déja inscrit !",
-              "href": "Se connecté"
-          }
-      },
-      "forgotpassword":{
-          "title": "Mot de passe oublié",
-          "button": "Enovoyé un email",
-          "login":{
-              "label": "Je me r'appel à mon mot de passe !",
-              "href": "Se connecter"
-          }
-      }
-  },  
-  "navbar":{
-      "home": "Accueil",
-      "product": "Produit",
-      "login": "Se connecter"
-  }
+    "goback": "Retour",
+    "auth": {
+        "or": "OU",
+        "firstname": "Prénom",
+        "lastname": "Nom",
+        "email": "Email",
+        "username": "Surnom",
+        "password": "Mot de passe",
+        "repeatpassword": "Repete le mot de passe",
+        "phonenumber": "Numéro de télephone",
+        "imageurl": "Choissisez votre photos",
+        "enter": {
+            "firstname": "Entrer votre prénom",
+            "lastname": "Entrer votre nom",
+            "username": "Entrer votre surnom",
+            "email": "Entrer votre email",
+            "password": "Entrer votre mot de passe",
+            "repeatpassword": "Repeter votre mot de passe",
+            "phonenumber": "Entrer votre numero de télephone",
+            "imageurl": "ImageUrl"
+        },
+        "login": {
+            "title": "Connecter",
+            "with": "Se connecter avec {{company}}",
+            "forgotpassword": "Mot de passe oublié ?",
+            "button.login": "Se connecter",
+            "register": {
+                "label": "Vous n'avez pas un compte !",
+                "href": "Creer un ."
+            }
+        },
+        "register": {
+            "title": "S'inscrire",
+            "with": "Creer compte avec {{company}}",
+            "button": "Creer compte",
+            "login": {
+                "label": "Déja inscrit !",
+                "href": "Se connecté"
+            }
+        },
+        "required": {
+            "firstname": "Prénom obligatoire",
+            "lastname": "Nom obligatoire",
+            "password": "Mot de passe obligatoire",
+            "email": "Email obligatoire",
+            "username": "Surnom format incorrect",
+            "phonenumber": "Numero de télephone obligatoire (just les nombres)"
+        },
+        "forgotpassword": {
+            "title": "Mot de passe oublié",
+            "button": "Enovoyé un email",
+            "login": {
+                "label": "Je me r'appel à mon mot de passe !",
+                "href": "Se connecter"
+            }
+        }
+    },
+    "navbar": {
+        "home": "Accueil",
+        "product": "Produit",
+        "login": "Se connecter"
+    }
 }
