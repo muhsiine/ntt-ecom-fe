@@ -1,14 +1,7 @@
-import {
-  Component,
-  OnInit
-} from '@angular/core';
-import {
-  Product
-} from 'src/app/models/product';
+import { Component, OnInit } from '@angular/core';
+import { Product } from 'src/app/models/product';
 import { NotifierService } from 'src/app/services/notifier.service';
-import {
-  ProductService
-} from 'src/app/modules/product/services/product.service';
+import { ProductService } from 'src/app/modules/product/services/product.service';
 
 @Component({
   selector: 'app-product',
@@ -26,7 +19,7 @@ export class ProductComponent implements OnInit {
   ngOnInit(): void {
     this.productService.getAll().subscribe(
       res => this.products = res, 
-      err => this.notifierServire.showNotification('error', err.statusText, err.message));
+      err => this.notifierServire.showNotification(err));
   }
   bulk(e: any) {
     if (e.target.checked == true) {

@@ -60,5 +60,10 @@
         "home": "Home",
         "product": "Product",
         "login": "Login"
-    }
+    },
+
+    "sidebar" : {
+        "account" : "Your account",
+        "help_center" : "Help center"
+    } 
 }

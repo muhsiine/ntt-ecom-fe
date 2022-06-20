@@ -1,0 +1,14 @@
+.sidebar-link {
+  @apply w-full text-white text-lg p-3 hover:bg-secondary-200 rounded hover:text-white flex gap-4;
+}
+
+.sidebar-link-active {
+  @apply bg-secondary-200 text-slate-100 dark:bg-secondary-600 dark:text-slate-300 ;
+  i{
+    @apply text-slate-100 dark:text-slate-300;
+  }
+}
+
+// :host{
+//   @apply relative h-full shadow w-fit;
+// }
