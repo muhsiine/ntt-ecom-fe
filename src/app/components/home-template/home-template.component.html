@@ -1,0 +1,9 @@
+<app-navbar *ngIf="!isAdmin"></app-navbar>
+<div class="flex w-full h-full">
+    <app-sidebar *ngIf="!isAdmin" class="h-full"></app-sidebar>
+    <app-admin-sidebar *ngIf="isAdmin" class="h-full"></app-admin-sidebar>
+    <div class="w-full h-full overflow-auto relative">
+        <router-outlet></router-outlet>
+        <app-footer class="fixed bottom-0 w-full"></app-footer>
+    </div>
+</div>

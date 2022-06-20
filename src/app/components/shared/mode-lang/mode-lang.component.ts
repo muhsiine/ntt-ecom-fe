@@ -27,17 +27,17 @@ export class ModeLangComponent implements OnInit {
       document.querySelector("html")?.classList.add('dark');
     }
   }
+
   public changeLanguage() {
     localStorage.setItem('locale', this.code);
     this.translateService.use(this.code);
   }
 
   switchDarkMode(): void{
-    if(localStorage.getItem('darkMode')){
-      this.dark = localStorage.getItem('darkMode') == 'true' || false;
-    }
+    this.dark = localStorage.getItem('darkMode') == 'true' || false;
+    this.dark = !this.dark;
 
-    if(!this.dark){
+    if(this.dark){
       document.querySelector("html")?.classList.add('dark');
       localStorage.setItem('darkMode', 'true') ;
     }
@@ -45,11 +45,12 @@ export class ModeLangComponent implements OnInit {
       document.querySelector("html")?.classList.remove('dark');
       localStorage.setItem('darkMode', 'false') ;
     }
+
   }
 
   get getMode():string{
     if(this.bgDark){
-      return this.dark ? 'text-white bi-moon-stars-fill' : 'text-white bi-sun-fill';
+      return this.dark ? ' bi-moon-stars-fill' : 'text-white bi-sun-fill';
     }
     return this.dark ? 'bi-moon-stars-fill' : 'bi-sun-fill';
   }

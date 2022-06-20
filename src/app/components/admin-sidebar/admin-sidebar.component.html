@@ -1,0 +1,44 @@
+<div class="h-full flex flex-col justify-between py-4 px-3 bg-slate-50 rounded dark:bg-gray-800 "
+   [class]="getSidebarActive ? 'w-72' : ''">
+   <ul class="space-y-2">
+      <li class="flex" [class]="getSidebarActive ? '' : 'justify-center'">
+         <i (click)="openCloseSidebar()" class="bi bi-list text-3xl cursor-pointer hover:rotate-45 transition"></i>
+      </li>
+      <li>
+         <a routerLink="/product" routerLinkActive="sidebar-link-active"
+            class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+            [class]="getSidebarActive ? '' : 'justify-center'">
+            <i class="bi bi-box2-fill text-secondary-600 dark:text-slate-300"></i>
+            <span class="ml-3" [class]="getSidebarActive ? '' : 'hidden'">Product</span>
+         </a>
+      </li>
+      <li>
+         <a routerLink="/order" routerLinkActive="sidebar-link-active"
+            class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+            [class]="getSidebarActive ? '' : 'justify-center'">
+            <i class="bi bi-newspaper text-secondary-600 dark:text-slate-300"></i>
+            <span class="ml-3" [class]="getSidebarActive ? '' : 'hidden'">Order</span>
+         </a>
+      </li>
+   </ul>
+   <div class="w-full flex  rounded flex-col">
+      <div class="w-full flex rounded justify-between items-center">
+         <img class="photo rounded-full" alt="Steve Schoger" width="48" height="48"
+            src="https://cdn.dribbble.com/users/42578/avatars/small/d0ac345ce3f79bf2c2e7e64527bbf342.jpg?1530900788">
+         <div class="flex flex-col" [class]="getSidebarActive ? '' : 'hidden'">
+            <label class="text-slate-800 dark:text-slate-300">Juan Carlos</label>
+            <a class="text-slate-400  cursor-pointer">View Profile</a>
+         </div>
+         <div [class]="getSidebarActive ? '' : 'hidden'">
+            <app-mode-lang class="flex flex-col items-center" [bgDark]="true"></app-mode-lang>
+         </div>
+
+      </div>
+      <a routerLink="/" 
+      class="flex items-center p-2 mt-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+      [class]="getSidebarActive ? '' : 'justify-center'">
+         <i class="bi bi-caret-left-fill"></i>
+         <p class="ml-3" [class]="getSidebarActive ? '' : 'hidden'">Logout</p>
+      </a>
+   </div>
+</div>

@@ -1,23 +1,28 @@
-<form class="border rounded shadow p-4">
-  <h4 class="text-xl ">Add Product</h4>
+<form class="relative border dark:border-slate-800 rounded shadow p-4 m-auto w-10/12" [formGroup]="prodForm" (ngSubmit)="AddProduct()">
+  <a class="absolute top-2 left-2 cursor-pointer" (click)="goBack()">
+    <i class="bi bi-caret-left-fill"></i>
+    {{ 'goback' | translate }}
+  </a>
+
+  <h4 class="text-xl text-center">Add Product</h4>
 
   <div class="form-group">
     <label>Name :</label>
-    <input />
+    <input formControlName="name"  />
   </div>
 
   <div class="form-group">
     <label>Description :</label>
-    <input />
+    <input formControlName="description" />
   </div>
   <div class="form-group">
     <label>Price :</label>
-    <input />
+    <input formControlName="price" />
   </div>
   <div class="form-group">
     <label>Category :</label>
-    <select>
-      <option *ngFor="let category of categories" value="{{category.category_id}}">{{category.name}}</option>
+    <select formControlName="category">
+      <option *ngFor="let category of categories" value="{{category.id}}">{{category.categoryCode}}</option>
     </select>
   </div>
   <div class="form-group">

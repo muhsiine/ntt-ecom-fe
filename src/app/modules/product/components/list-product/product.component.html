@@ -14,7 +14,7 @@
         <div *ngIf="!show">
         <button class="btn ml-96" ((click))="bulk($event)" >delete selected product</button>
        </div>
-        <a  routerLink="/admin/product/add" class="btn">Add Product</a>
+        <a  routerLink="/product/add" class="btn">Add Product</a>
     </div>
     <table class="w-full text-lg text-left text-gray-500 dark:text-gray-400">
         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
@@ -59,7 +59,7 @@
                     {{product.description}}
                 </td>
                 <td class="px-6 py-4">
-                    {{product.category.name}}
+                    {{product.category.categoryCode}}
                 </td>
                 <td class="px-6 py-4">
                     {{product.price}}
@@ -73,6 +73,8 @@
             
         </tbody>
     </table>
+    <app-data-not-found *ngIf="!products.length"></app-data-not-found>
+
 </div>
 <!-- delete modal -->
 <div *ngIf="showDeleteModal" class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">

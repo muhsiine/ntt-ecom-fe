@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ProductComponent } from './components/list-product/product.component';
-import { FormProductComponent } from './components/form-product/form-product.component';
 import { ProductRoutingModule } from './product-routing.module';
+import { SharedModule } from 'src/app/components/shared/shared.module';
 
-
+import { FormProductComponent } from './components/form-product/form-product.component';
+import { ProductComponent } from './components/list-product/product.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +13,8 @@ import { ProductRoutingModule } from './product-routing.module';
   ],
   imports: [
     CommonModule,
-    ProductRoutingModule
+    ProductRoutingModule,
+    SharedModule
   ]
 })
 export class ProductModule { }

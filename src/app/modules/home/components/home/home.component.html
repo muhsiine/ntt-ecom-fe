@@ -1,10 +1,8 @@
 <div class="sidebar-container w-1/4 h-full absolute z-50 hidden" >
-        <app-sidebar></app-sidebar>
         <div class="close-btn mr-10 w-6 h-6 tex-lg text-white font-bold cursor-pointer" (click)="hideSidebar()">X</div>
     </div>
     <div class="sidebar-shadowbox absolute bg-black opacity-80 z-40 w-screen h-screen overflow-hidden hidden" >
 </div>
-<app-navbar class="sticky top-0 z-30"></app-navbar>
 <div class="carousel ">
     <app-carousel></app-carousel>
 </div>
@@ -18,22 +16,4 @@
             <product-card *ngFor="let number of numbers"></product-card>
     </div>
 </div>
-<div class="relative p-8   ">
-    <div class="flex space-x-2">
-        <span class=" text-5xl font-bold text-secondary-600">#</span>
-        <h5 class="mb-2  text-4xl font-bold tracking-tight text-dark dark:text-white">Best Sellers</h5>
-    </div>
-    <div class="flex m-2 space-x-8 justify-center overflow-auto">
-            <product-card *ngFor="let number of numbers"></product-card>
-    </div>
-</div>
-<div class="relative p-8   ">
-    <div class="flex space-x-2">
-        <span class=" text-5xl font-bold text-secondary-600">#</span>
-        <h5 class="mb-2  text-4xl font-bold tracking-tight text-dark dark:text-white">Best Sellers</h5>
-    </div>
-    <div class="flex m-2 space-x-8 justify-center overflow-auto">
-            <product-card *ngFor="let number of numbers"></product-card>
-    </div>
-</div>
-<app-footer></app-footer>
+<app-category-card></app-category-card>
