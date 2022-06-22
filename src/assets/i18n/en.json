@@ -63,6 +63,8 @@
     },
 
     "sidebar" : {
+        "categories" : "Shop by Category",
+        "help_setting" : "Help & Settings",
         "account" : "Your account",
         "help_center" : "Help center"
     } 
