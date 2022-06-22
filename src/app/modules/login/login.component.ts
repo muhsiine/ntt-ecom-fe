@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
   onLoginClick(): void{
     this.messageError = "";
     if(this.user.username.toUpperCase() === "ADMIN" && this.user.password === "admin"){
-      this.router.navigate(['/admin/product']);
+      this.router.navigate(['/product']);
       return;
     }
     this.user.password = "";
@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
   }
 
   onGoogleLoginClick(): void{
-    this.router.navigate(['/admin/product']);
+    this.router.navigate(['/product']);
   }
 
 }

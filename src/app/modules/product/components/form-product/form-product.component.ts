@@ -1,17 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
-import { Category } from 'src/app/models/category';
-import { CategoryService } from 'src/app/modules/category/category.service';
+import { CategoryService } from 'src/app/modules/category/services/category.service';
 import { ProductService } from 'src/app/modules/product/services/product.service';
 
-import { AbstractControl, FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms'
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { CategoryByLang } from 'src/app/models/categoryByLang';
+
 @Component({
   selector: 'app-form-product',
   templateUrl: './form-product.component.html',
   styleUrls: ['./form-product.component.scss']
 })
 export class FormProductComponent implements OnInit {
-  categories:Category[]=[];
+  categories:CategoryByLang[]=[];
   body: any={};
   prodForm = new FormGroup({
     name: new FormControl(null, [Validators.required, Validators.minLength(3)]),

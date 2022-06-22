@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { Category } from 'src/app/models/category';
 import { Notifier } from 'src/app/models/notifier';
-import { CategoryService } from 'src/app/modules/category/category.service';
+import { CategoryService } from 'src/app/modules/category/services/category.service';
 import { NotifierService } from 'src/app/services/notifier.service';
+import { CategoryByLang } from 'src/app/models/categoryByLang';
 
 @Component({
   selector: 'app-sidebar',
@@ -33,7 +34,7 @@ export class SidebarComponent implements OnInit {
       "languages": []
     }
   ];
-  categories: Category[] = []; 
+  categories: CategoryByLang[] = []; 
   settingsList: Category[] = [
     {
       "id": 1,
