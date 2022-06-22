@@ -73,7 +73,8 @@
             
         </tbody>
     </table>
-    <app-data-not-found *ngIf="!products.length"></app-data-not-found>
+    <p *ngIf="loading">Loading ...</p>
+    <app-data-not-found *ngIf="!products.length && !loading"></app-data-not-found>
 
 </div>
 <!-- delete modal -->
