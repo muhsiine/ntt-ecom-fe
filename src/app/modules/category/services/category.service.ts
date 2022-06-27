@@ -16,10 +16,11 @@ export class CategoryService implements IServiceCommon {
   
 
   constructor(private http: HttpClient) {
-    this.lang = localStorage.getItem('locale') || 'en';
+    
    }
 
   getAll(): Observable<CategoryByLang[]> {
+    this.lang = localStorage.getItem('locale') || 'en';
     return this.http.get<CategoryByLang[]>(`${this.baseUrl}/all`, { params: { lang: this.lang.toUpperCase() }});
   }
 
