@@ -10,12 +10,14 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { ModeLangComponent } from './mode-lang/mode-lang.component';
 import { DataNotFoundComponent } from './data-not-found/data-not-found.component';
 import { AdminSidebarComponent } from '../admin-sidebar/admin-sidebar.component';
+import { LoaderComponent } from './loader/loader.component';
 
 @NgModule({
   declarations: [
     ModeLangComponent,
     DataNotFoundComponent,
-    AdminSidebarComponent
+    AdminSidebarComponent,
+    LoaderComponent
   ],
   imports: [
     CommonModule,
@@ -37,6 +39,7 @@ import { AdminSidebarComponent } from '../admin-sidebar/admin-sidebar.component'
     DataNotFoundComponent,
     TranslateModule,
     FormsModule,
+    LoaderComponent,
     ReactiveFormsModule,
     AdminSidebarComponent
   ]
