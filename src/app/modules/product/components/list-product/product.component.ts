@@ -22,8 +22,8 @@ export class ProductComponent implements OnInit {
     this.loading = true;
     this.productService.getAll().subscribe(
       res =>{
-        this.products = res;
-        this.loading = false;
+       this.products = res;
+       this.loading = false;
       },
       err => {
         this.notifierServire.showNotification(err);
