@@ -1,14 +1,14 @@
-<nav class="p-4 bg-back dark:bg-slate-700 dark:text-white text-dark shadow-lg flex justify-between items-center sticky top-0 z-30" >
-    <div class="flex items-center">
-        <i (click)="openCloseSidebar()" class="bi bi-list text-2xl mr-3 cursor-pointer active:rotate-45 transition"></i>
-        <h2 class="text-lg font-medium">NTT Squad</h2>
-    </div>
-    <div>
-        <a class="hover:text-slate-300 mr-4 text-base" routerLink="/" routerLinkActive="font-bold dark:text-white" [routerLinkActiveOptions]="{exact: true}">{{ 'general.home' | translate }}</a>
-        <a class="hover:text-slate-300 text-base"  routerLink="/product" routerLinkActive="font-bold dark:text-white">{{ 'general.product' | translate }}</a>
-    </div>
-    <div class="flex items-center">
-        <app-mode-lang></app-mode-lang>
-        <a class="btn" routerLink="/login">{{ 'general.login' | translate }}</a>
-    </div>
-</nav>
+<div class="flex items-center">
+    <i (click)="openCloseSidebar()" class="bi bi-list text-2xl mr-3 cursor-pointer active:rotate-45 transition"></i>
+    <h2 class="text-lg font-medium">NTT Squad</h2>
+</div>
+<div>
+    <a class="hover:text-slate-300 mr-4 text-base" routerLink="/" routerLinkActive="font-bold dark:text-white"
+        [routerLinkActiveOptions]="{exact: true}">{{ 'general.home' | translate }}</a>
+    <a class="hover:text-slate-300 text-base" routerLink="/product" routerLinkActive="font-bold dark:text-white">{{
+        'general.product' | translate }}</a>
+</div>
+<div class="flex items-center">
+    <app-mode-lang></app-mode-lang>
+    <a class="btn" routerLink="/login">{{ 'general.login' | translate }}</a>
+</div>
