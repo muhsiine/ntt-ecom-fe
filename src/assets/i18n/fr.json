@@ -1,5 +1,12 @@
 {
     "goback": "Retour",
+    "general": {
+        "home": "Acceuil",
+        "product": "Produit",
+        "order": "Ordre", 
+        "login": "Se connecter",
+        "logout": "Se déconnecter"
+    },
     "auth": {
         "or": "OU",
         "firstname": "Prénom",
@@ -56,9 +63,16 @@
             }
         }
     },
-    "navbar": {
-        "home": "Accueil",
+    "sidebar" : {
+        "home": "Acceuil",
         "product": "Produit",
-        "login": "Se connecter"
+        "order": "Ordre", 
+        "trends": "Tendances",
+        "best_sellers": "Meilleures ventes",
+        "new_drops": "Nouvelles gouttes",
+        "categories" : "Acheter par catégorie",
+        "help_setting" : "Aide et paramètres",
+        "account" : "Votre compte",
+        "help_center" : "Centre d'aide"
     }
 }

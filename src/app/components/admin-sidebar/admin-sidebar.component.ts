@@ -8,6 +8,12 @@ import { SidebarComponent } from '../sidebar/sidebar.component';
 })
 export class AdminSidebarComponent implements OnInit {
 
+  routings:{ name:string, icon:string, link:string }[]=[
+    { name: 'general.home', icon: 'bi-house-fill', link:'/' },
+    { name: 'general.product', icon: 'bi-box2-fill', link:'/product' },
+    { name: 'general.order', icon: 'bi-newspaper', link:'/order' },
+  ];
+
   constructor() { }
 
   ngOnInit(): void {

@@ -41,6 +41,7 @@ export class ProductComponent implements OnInit {
     this.loading = true;
     this.filterForm.reset();
     this.productService.getAll().subscribe(
+
       res => {
         this.products = res;
         this.loading = false;

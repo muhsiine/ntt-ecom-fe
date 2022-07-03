@@ -14,26 +14,6 @@ import { CategoryByLang } from 'src/app/models/categoryByLang';
 export class SidebarComponent implements OnInit {
 
   static isSidebarActive:boolean = false;
-  communCategories: Category[] = [
-    {
-      "id": 1,
-      "categoryCode": "Trends",
-      "icon": "bi-graph-up-arrow",
-      "languages": []
-    },
-    {
-      "id": 2,
-      "categoryCode": "Best Sellers",
-      "icon": "bi-patch-check-fill",
-      "languages": []
-    },
-    {
-      "id": 3,
-      "categoryCode": "New Drops",
-      "icon": "bi-graph-down-arrow",
-      "languages": []
-    }
-  ];
   categories: CategoryByLang[] = []; 
   settingsList: Category[] = [
     {
@@ -53,9 +33,9 @@ export class SidebarComponent implements OnInit {
   constructor(private categoryService: CategoryService, private notifier: NotifierService) { }
 
   ngOnInit(): void {
-    this.categoryService.getAll()
-      .subscribe(res=> this.categories = res,
-                 err=> this.notifier.showNotification(Notifier.ERROR, "Error ", err.message));
+    this.categoryService.getAll().subscribe(
+      res=> this.categories = res,
+      err=> this.notifier.showNotification(Notifier.ERROR, "Error", err.message));
   }
 
   get getSidebarActive():boolean{
