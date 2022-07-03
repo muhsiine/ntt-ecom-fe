@@ -2,20 +2,53 @@
 <h3>List of products</h3>
 </div>
 <div class="relative overflow-x-auto shadow-md sm:rounded-lg w-5/6 m-auto ">
-    <div class="p-4 flex justify-between ">
-        <label for="table-search" class="sr-only">Search</label>
-        <div class="relative mt-1">
-            <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
+    <form [formGroup]="filterForm" (ngSubmit)="filter()">
+        <div class="p-4 items-center grid grid-cols-4 gap-4">
+            <label for="table-search" class="sr-only">Search</label>
+            <div class="relative mt-1">
+                <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                    <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
+                </div>
+                <input type="text" id="table-search" formControlName="name" class="bg-gray-50 border border-gray-300 text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-30 pl-10 pr-4 py-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Name">
             </div>
-            <input type="text" id="table-search" class="bg-gray-50 border border-gray-300 text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-80 pl-10 pr-4 py-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search for items">
+            <div class="relative mt-1">
+                <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                    <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
+                </div>
+                <input type="text" id="table-search" formControlName="description" class="bg-gray-50 border border-gray-300 text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-30 pl-10 pr-4 py-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Description">
+            </div>
+            <div class="relative mt-1">
+                <input type="date" formControlName="initialDate" class="bg-gray-50 border border-gray-300 text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-60 pl-10 pr-4 py-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select start date">
+            </div>
+            <div class="relative mt-1">
+                <input type="date" formControlName="endDate" class="bg-gray-50 border border-gray-300 text-gray-900  rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-60 pl-10 pr-4 py-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select end date">
+            </div>
         </div>
-        
-        <div *ngIf="!show">
-        <button class="btn ml-96" ((click))="bulk($event)" >delete selected product</button>
-       </div>
-        <a  routerLink="/product/add" class="btn">Add Product</a>
-    </div>
+        <div class="p-4 items-center grid grid-cols-4 gap-4">
+            <div class="relative"> 
+                <select name="categories" id="categories" formControlName="categoryId" class="btn w-full">
+                    <option [value]="null">Categories</option>
+                    <option *ngFor="let category of categories" [value]="category.id">{{category.description}}</option>
+                </select>  
+            </div>
+            <div class="relative grid justify-items-center mb-6">     
+                <label for="min-price" class="text-center block mb-2 font-medium text-gray-900 dark:text-gray-300">Min : {{minRangevalue}}</label>
+                <input id="min-price" type="range" formControlName="price1" min="0" max="{{maxPrice}}" value="0" class="h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700" (input)="minRangeValueChanged($event)">  
+            </div>
+            <div class="relative grid justify-items-center mb-6">     
+                <label for="max-price" class="text-center block mb-2 font-medium text-gray-900 dark:text-gray-300">Max : {{maxRangevalue}}</label>
+                <input id="max-price" type="range" formControlName="price2" min="0" max="{{maxPrice}}" value="0" class="h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700" (input)="maxRangeValueChanged($event)">  
+            </div>
+        </div>
+        <div class="p-4 flex justify-end space-x-4">
+            <button class="btn" type="button" (click)="filter()">Search</button>
+            <button class="btn" type="button" (click)="clear()">Clear</button>
+            <div *ngIf="!show">
+            <button class="btn ml-96" ((click))="bulk($event)" >delete selected product</button>
+            </div>
+            <a  routerLink="/product/add" class="btn">Add Product</a>
+        </div>
+    </form>
     <table class="w-full text-lg text-left text-gray-500 dark:text-gray-400">
         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
@@ -107,7 +140,6 @@
       </div>
     </div>
   </div>
-
 
 
 
