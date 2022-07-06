@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/models/product';
 import { NotifierService } from 'src/app/services/notifier.service';
 import { ProductService } from 'src/app/modules/product/services/product.service';
+import { Notifier } from 'src/app/models/notifier';
 
 @Component({
   selector: 'app-product',
