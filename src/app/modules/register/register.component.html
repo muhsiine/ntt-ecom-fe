@@ -19,8 +19,9 @@
       <label class="">{{ 'auth.email' | translate }}</label>
       <input class="input border-2 border-secondary-600" type="email" formControlName="email"
         placeholder="{{'auth.enter.email' | translate}}">
-      <small class="text-danger" *ngIf="f.email?.invalid && f.email?.touched">{{'auth.required.email' |
+      <small class="text-danger" *ngIf="f.email?.errors?.required && f.email?.touched">{{'auth.required.email' |
         translate}}</small>
+      <small class="text-danger" *ngIf="f.email?.value !== null && f.email?.invalid && f.email?.touched">{{ 'auth.invalid.email' | translate }}</small>
     </div>
     <div class="flex flex-col mb-4">
       <label class="">{{ 'auth.phonenumber' | translate }}</label>
@@ -41,7 +42,9 @@
 
       <input class="input border-2 border-secondary-600" type="username" formControlName="username"
         placeholder="{{'auth.enter.username' | translate}}">
-      <small class="text-danger" *ngIf="f.username?.invalid && f.username?.touched">{{'auth.required.username' |
+      <small class="text-danger" *ngIf="f.username?.value === null && f.username?.invalid && f.username?.errors?.required && f.username?.touched">{{'auth.required.username' |
+        translate}}</small>
+      <small class="text-danger" *ngIf="f.username?.value !== null && f.username?.invalid && f.username?.touched">{{'auth.invalid.username' |
         translate}}</small>
     </div>
     <div class="flex flex-col mb-4">
@@ -60,8 +63,11 @@
       </div>
       <input class="input border-2 border-secondary-600" type="password" formControlName="confirmPassword"
         placeholder="{{'auth.enter.repeatpassword' | translate}}">
-      <small class="text-danger" *ngIf="f.confirmPassword?.invalid && f.confirmPassword?.touched">{{'auth.required.password' |
+      <small class="text-danger" *ngIf="f.confirmPassword?.invalid && f.confirmPassword?.value === null && f.confirmPassword?.touched">{{'auth.required.password' |
         translate}}</small>
+      <small class="text-danger" *ngIf="f.confirmPassword?.invalid && f.confirmPassword?.errors?.passwordNotMatch && f.confirmPassword?.touched">
+        {{ 'auth.invalid.password' | translate }}
+      </small>
     </div>
     <div class="text-center mt-6">
       <button

@@ -49,10 +49,15 @@
         "required": {
             "firstname": "First Name is empty",
             "lastname": "Last Name is empty",
-            "password": "Password is required",
-            "email": "Email format incorrect",
-            "username": "Username format incorrect",
+            "password": "Password is required (Minimum 6 characters required)",
+            "email": "Email address is required",
+            "username": "Username is required",
             "phonenumber": "PhoneNumber is required (only numbers are allowed)"
+        },
+        "invalid": {
+            "email": "Email address format incorrect",
+            "username": "Username format incorrect (Minimum 6 characters required)",
+            "password": "Passwords didn’t match"
         },
         "forgotpassword": {
             "title": "Forgot password",
