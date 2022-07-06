@@ -49,10 +49,15 @@
         "required": {
             "firstname": "Prénom obligatoire",
             "lastname": "Nom obligatoire",
-            "password": "Mot de passe obligatoire",
+            "password": "Mot de passe obligatoire (Minimum 6 caractères requis)",
             "email": "Email obligatoire",
-            "username": "Surnom format incorrect",
+            "username": "Surnom obligatoire",
             "phonenumber": "Numero de télephone obligatoire (just les nombres)"
+        },
+        "invalid": {
+            "email": "Format d'adresse e-mail incorrect",
+            "username": "Format du nom d'utilisateur incorrect (Minimum 6 caractères requis)",
+            "password": "Les mots de passe ne correspondent pas"
         },
         "forgotpassword": {
             "title": "Mot de passe oublié",

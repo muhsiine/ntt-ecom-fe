@@ -10,8 +10,14 @@ export class RegisterComponent implements OnInit {
   passwordMatchingValidatior: ValidatorFn = (control: AbstractControl): ValidationErrors | null => {
     const password = control.get('password');
     const confirmPassword = control.get('confirmPassword');
-
-    return password?.value === confirmPassword?.value ? null : { notmatched: true };
+    
+    password?.value === confirmPassword?.value ? null : { passwordNotMatched: true };
+    if(password?.value !== confirmPassword?.value){
+      control.get('confirmPassword')?.setErrors({ passwordNotMatch: true });
+    } else {
+      control.get('confirmPassword')?.setErrors(null);
+    }
+    return null;
   };
   
   registerForm = new FormGroup({
@@ -38,9 +44,16 @@ export class RegisterComponent implements OnInit {
     return this.registerForm.controls;
   }
 
+  private validate(): void {
+    if(this.registerForm.status === 'INVALID'){
+      this.registerForm.markAllAsTouched();
+      console.log(this.f)
+      return;
+    }
+  }
+
   onRegisterSubmit() {
-    console.log(this.registerForm);
-    console.log(this.registerForm.value);
+    this.validate();
   }
 
 }
