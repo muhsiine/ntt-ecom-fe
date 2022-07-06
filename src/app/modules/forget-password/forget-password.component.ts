@@ -18,7 +18,19 @@ export class ForgetPasswordComponent implements OnInit {
     
     ngOnInit(): void {
     }
+
+    onForgetPasswordForm(): void {
+        console.log(this.forgetPasswordForm);
+        this.validate();
+    }
     
+    private validate(): void {
+        if(this.forgetPasswordForm.status === 'INVALID'){
+          this.forgetPasswordForm.markAllAsTouched();
+          return;
+        }
+    }
+
     public get forgetPasswordFormValidator() : any {
         return this.forgetPasswordForm.controls;
     }
