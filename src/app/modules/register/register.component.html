@@ -25,10 +25,36 @@
     </div>
     <div class="flex flex-col mb-4">
       <label class="">{{ 'auth.phonenumber' | translate }}</label>
-      <input class="input border-2 border-secondary-600" type="text" formControlName="phonenumber"
-        placeholder="{{'auth.enter.phonenumber' | translate}}">
-      <small class="text-danger" *ngIf="f.phonenumber?.invalid && f.phonenumber?.touched">{{'auth.required.phonenumber'
-        | translate}}</small>
+      <div class="register-phonenumber">
+        <ngx-intl-tel-input
+          [cssClass]="'custom'"
+          [preferredCountries]="preferredCountries"
+          [enableAutoCountrySelect]="true"
+          [enablePlaceholder]="true"
+          [searchCountryFlag]="true"
+          [searchCountryField]="[
+            SearchCountryField.Iso2,
+            SearchCountryField.Name,
+            SearchCountryField.DialCode
+          ]"
+          [selectFirstCountry]="false"
+          [selectedCountryISO]="CountryISO.Morocco"
+          [maxLength]="15"
+          [phoneValidation]="true"
+          [separateDialCode]="true"
+          [numberFormat]="PhoneNumberFormat.National"
+          name="phonenumber"
+          formControlName="phonenumber"
+        >
+        </ngx-intl-tel-input>
+      </div>
+    <!-- End of ngx-intl-tel-input -->
+      <small class="text-danger" *ngIf="f.phonenumber?.invalid && f.phonenumber?.errors?.required && f.phonenumber?.touched">
+        {{'auth.required.phonenumber' | translate}}
+      </small>
+      <small class="text-danger" *ngIf="f.phonenumber?.invalid && f.phonenumber?.errors?.validatePhoneNumber && f.phonenumber?.touched">
+        {{'auth.invalid.phonenumber' | translate}}
+      </small>
     </div>
     <div class="flex flex-col mb-4">
       <label class="">{{ 'auth.imageurl' | translate }}</label>
