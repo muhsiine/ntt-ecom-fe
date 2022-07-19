@@ -6,7 +6,6 @@ import { CategoryService } from 'src/app/modules/category/services/category.serv
 import { CategoryByLang } from 'src/app/models/categoryByLang';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ProductFilter } from 'src/app/models/productFilter';
-import * as moment from 'moment-timezone';
 
 @Component({
   selector: 'app-product',
