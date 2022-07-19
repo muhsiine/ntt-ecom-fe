@@ -4,7 +4,7 @@ import { NotifierService } from 'src/app/services/notifier.service';
 import { ProductService } from 'src/app/modules/product/services/product.service';
 import { CategoryService } from 'src/app/modules/category/services/category.service';
 import { CategoryByLang } from 'src/app/models/categoryByLang';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, ValidatorFn, AbstractControl, ValidationErrors } from '@angular/forms';
 import { ProductFilter } from 'src/app/models/productFilter';
 
 @Component({
@@ -22,6 +22,9 @@ export class ProductComponent implements OnInit {
   minRangevalue: Number | null = null;
   maxRangevalue: Number | null = null;
   categories: CategoryByLang[] = [];
+  productFilter : ProductFilter = new  ProductFilter();
+  validDate : String | null = null;
+  validPrice : String | null = null;
   filterForm = new FormGroup({
     name: new FormControl(null),
     description: new FormControl(null),
@@ -31,7 +34,6 @@ export class ProductComponent implements OnInit {
     initialDate: new FormControl(null),
     endDate: new FormControl(null)
   });
-  productFilter : ProductFilter = new  ProductFilter();
 
   constructor(private productService: ProductService, private notifierServire: NotifierService,
     private categoryService: CategoryService) { }
@@ -81,36 +83,83 @@ export class ProductComponent implements OnInit {
 
   }
   minRangeValueChanged(e: any) {
-    this.minRangevalue = e.target.value;
+    this.minRangevalue = e.target.value;  
+    this.datesPricesValidator(this.filterForm.value.initialDate, this.filterForm.value.endDate, this.filterForm.value.price1, this.filterForm.value.price2);
   }
 
   maxRangeValueChanged(e: any) {
     this.maxRangevalue = e.target.value;
+    this.datesPricesValidator(this.filterForm.value.initialDate, this.filterForm.value.endDate, this.filterForm.value.price1, this.filterForm.value.price2);
   }
 
   filter() {
-    var startDate = moment.utc(this.filterForm.value.initialDate, "YYYY-MM-DD HH:mm:ss").tz("Europe/Paris").toDate();
-    var endDate = moment.utc(this.filterForm.value.endDate, "YYYY-MM-DD HH:mm:ss").tz("Europe/Paris").toDate();
-    this.productFilter = new ProductFilter(
-      this.filterForm.value.name,
-      this.filterForm.value.description,
-      this.filterForm.value.categoryId,
-      startDate,
-      endDate,
-      this.filterForm.value.price1,
-      this.filterForm.value.price2
-    );
-    this.productService.filter(this.productFilter).subscribe(
-      res => {
-        this.products = res
-        console.log("products:" + this.products)
+    
+    if(this.datesPricesValidator(this.filterForm.value.initialDate, this.filterForm.value.endDate, this.filterForm.value.price1, this.filterForm.value.price2)){
+      this.validDate = null;
+      this.validPrice = null;
+      var startDate = this.filterForm.value.initialDate;
+      var endDate = this.filterForm.value.endDate;
+      if(startDate != null){
+        startDate = new Date(startDate);
       }
-    )
+      if(endDate != null){
+        endDate = new Date(endDate);
+      }
+      this.productFilter = new ProductFilter(
+        this.filterForm.value.name,
+        this.filterForm.value.description,
+        this.filterForm.value.categoryId,
+        startDate,
+        endDate,
+        this.filterForm.value.price1,
+        this.filterForm.value.price2
+      );
+      this.productService.filter(this.productFilter).subscribe(
+        res => {
+          this.products = res
+          console.log("products:" + this.products)
+        }
+      )
+    }
   }
 
   clear() {
     this.filterForm.reset();
     this.maxRangevalue= null;
     this.minRangevalue= null;
+    this.validDate = null;
+    this.validPrice = null;
   }
+
+  datesPricesValidator(initialDate : Date, endDate : Date, price1 : Number, price2 : Number) : Boolean{
+    let isDateValid = true;
+    let isPriceValid = true;
+
+    if(initialDate != null && endDate != null){
+      if(new Date(initialDate) <= new Date(endDate)){
+        this.validDate = null;
+        isDateValid = true;
+      }else{
+        this.validDate = "Min Date should be inferior than Max Date";
+        isDateValid = false;
+      }
+    }
+
+    if(price1 != null && price2 != null){
+      if(price1 <= price2){
+        this.validPrice = null;
+        isPriceValid = true;
+      }else{
+        this.validPrice = "Min Price should be inferior than Max Price";
+        isPriceValid = false;
+      }
+    }
+ 
+    return isDateValid && isPriceValid ? true : false;
+  }
+
+  dateChangeValue(){
+    this.datesPricesValidator(this.filterForm.value.initialDate, this.filterForm.value.endDate, this.filterForm.value.price1, this.filterForm.value.price2);
+  }
+
 }
