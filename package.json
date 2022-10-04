@@ -20,7 +20,6 @@
     "@angular/router": "~13.3.0",
     "@ngx-translate/core": "^14.0.0",
     "@ngx-translate/http-loader": "^7.0.0",
-    "google-libphonenumber": "^3.2.29",
     "intl-tel-input": "^17.0.3",
     "moment": "^2.29.3",
     "moment-timezone": "^0.5.34",
