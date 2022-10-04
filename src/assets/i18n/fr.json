@@ -52,12 +52,13 @@
             "password": "Mot de passe obligatoire (Minimum 6 caractères requis)",
             "email": "Email obligatoire",
             "username": "Surnom obligatoire",
-            "phonenumber": "Numero de télephone obligatoire (just les nombres)"
+            "phonenumber": "Numero de télephone obligatoire"
         },
         "invalid": {
             "email": "Format d'adresse e-mail incorrect",
             "username": "Format du nom d'utilisateur incorrect (Minimum 6 caractères requis)",
-            "password": "Les mots de passe ne correspondent pas"
+            "password": "Les mots de passe ne correspondent pas",
+            "phonenumber": "Le numéro de téléphone n'est pas valide"
         },
         "forgotpassword": {
             "title": "Mot de passe oublié",
