@@ -52,12 +52,13 @@
             "password": "Password is required (Minimum 6 characters required)",
             "email": "Email address is required",
             "username": "Username is required",
-            "phonenumber": "PhoneNumber is required (only numbers are allowed)"
+            "phonenumber": "Phone number is required"
         },
         "invalid": {
             "email": "Email address format incorrect",
             "username": "Username format incorrect (Minimum 6 characters required)",
-            "password": "Passwords didn’t match"
+            "password": "Passwords didn’t match",
+            "phonenumber": "Phone number is not valid"
         },
         "forgotpassword": {
             "title": "Forgot password",
