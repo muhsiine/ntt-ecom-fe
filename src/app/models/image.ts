@@ -1,7 +1,7 @@
 import { Product } from "./product";
 
 export class Image{
-  image_id : number = 0;
-  image_url : string = '';
+  id : number = 0;
+  imageUrl : string = '';
   product : Product = new Product();
 }
