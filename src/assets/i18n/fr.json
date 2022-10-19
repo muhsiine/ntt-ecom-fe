@@ -5,7 +5,8 @@
         "product": "Produit",
         "order": "Ordre", 
         "login": "Se connecter",
-        "logout": "Se déconnecter"
+        "logout": "Se déconnecter",
+        "about": "À propos"
     },
     "auth": {
         "or": "OU",
