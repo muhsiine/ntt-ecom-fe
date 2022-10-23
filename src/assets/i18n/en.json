@@ -5,7 +5,8 @@
         "product": "Product",
         "order": "Order", 
         "login": "Login",
-        "logout": "Logout"
+        "logout": "Logout",
+        "cart": "Cart"
     },
     "auth": {
         "or": "OR",
