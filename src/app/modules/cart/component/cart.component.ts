@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Location } from '@angular/common';
 import { Image } from 'src/app/models/image';
 import { Product } from 'src/app/models/product';
-import { ProductService } from '../../product/services/product.service';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-cart',
@@ -10,6 +10,14 @@ import { ProductService } from '../../product/services/product.service';
   styleUrls: ['./cart.component.scss']
 })
 export class CartComponent implements OnInit {
+  @Input() counter: number = 0;
+  total :number = 0;
+  product_total : number = 0;
+  product_price : number = 1;
+  product_id : number = 0;
+  id : number = 0;
+  a : boolean = false;
+  notChecked : boolean = true;
   images :Image[] = [];
   products: Product[] = [
     {id : 1, name : 'Product 1', description: 'descripcion Product 1', category : {id: 1, categoryCode: 'FSN', description: 'Fashion', icon: ''}, price: 1, nmAvailableItems: 100, images : this.images, quantity: 10, created_at: new Date(), modified_at: new Date(), deleted_at: new Date() },
@@ -42,4 +50,40 @@ export class CartComponent implements OnInit {
   goBack(){
     this.location.back();
   }
+
+  checkOut(checkbox: any, product: Product){
+    if(checkbox.target.checked){
+      this.notChecked = false;
+      if(product != null && product.price){
+        if(this.total > 1){
+          if(product.id == this.product_id){
+            this.product_total = 0;
+          }else{
+            this.a = true;
+          }
+        }else{
+          this.total = 1 * product.price;
+          this.counter = 1;
+        }
+        this.product_price = product.price;
+        this.product_id = product.id;
+        if(this.a == true){
+          this.product_total = this.total;
+        }
+      }    
+    }else{
+      this.notChecked = true;
+      this.counter = 0;
+    }
+
+  }
+
+  addToCheckOut(e:any){
+    if(e.target.value > 0){
+      this.total = this.product_total + this.product_price * e.target.value;
+    }else{
+      this.total = this.product_total;
+    }
+  }
+
 }
