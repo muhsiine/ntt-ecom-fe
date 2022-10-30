@@ -1,4 +1,3 @@
-import { Category } from "./category";
 import { User } from "./user";
 import { CategoryByLang } from './categoryByLang';
 import { Image } from "./image";
@@ -16,4 +15,5 @@ export class Product{
   modified_at : Date | null = null;
   deleted_at : Date | null = null;
   user ?: User = new User();
+  isChecked?: Boolean = false;
 }

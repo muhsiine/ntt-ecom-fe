@@ -1,4 +1,9 @@
 <form class="relative border dark:border-slate-800 rounded shadow p-4 mt-4 m-auto w-10/12">
+  <div *ngIf="checkOutProduct != null && checkOutProduct != ''">
+    <p class="text-center text-red-700">
+      {{checkOutProduct}}
+    </p>
+  </div>
   <div class="overflow-auto h-screen rounded-lg">
     <div class="grid grid-rows-2 grid-cols-3 grid-flow-col gap-2 p-2">
       <div class="row-span-2 col-start-1 col-span-2">
@@ -6,7 +11,7 @@
           <div class="grid grid-cols-3 gap-2 border-2 border-slate-100 rounded-md p-2 mb-2">
               <div>
                 <input class="h-4 w-4 border border-gray-300 rounded-sm bg-white focus:outline-none transition duration-200 mt-8 align-top bg-no-repeat bg-center bg-contain float-left mr-4 cursor-pointer"
-                        (change)="checkOut($event, product)" type="checkbox" id="check" name="check" value="product">
+                        (change)="checkOut($event, product)" type="checkbox" id="check" name="check" [value]="product.isChecked">
                 <img class="w-16 h-16 rounded-lg mt-2" src={{product.images[0]?.imageUrl}} onerror="this.src='https://www.kindacode.com/wp-content/uploads/2022/06/computer-example.jpg'" />  
               </div>
               <div>
@@ -30,7 +35,7 @@
               <input type="text" oninput="this.value=this.value.replace(/[^0-9]/g,'');" (change)="addToCheckOut($event)" class="text-center h-6 w-24 bg-slate-200 font-semibold text-md hover:text-black focus:text-black text-gray-800  outline-none" min="0"
                name="custom-input-number" [value]="counter" [disabled]="notChecked">
             </div>
-            <div class="grid justify-items-end"><a class="btn">Checkout</a></div>
+            <div class="grid justify-items-end"><button class="btn" type="button" (click)="sendCheckOutList()">Checkout</button></div>
           </div>
         </div>
 
