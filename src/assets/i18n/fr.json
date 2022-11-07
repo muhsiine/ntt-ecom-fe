@@ -6,7 +6,9 @@
         "order": "Ordre", 
         "login": "Se connecter",
         "logout": "Se déconnecter",
-        "cart": "Carte"
+        "cart": "Carte",
+        "checkout" : "Caisse",
+        "price" : "Prix"
     },
     "auth": {
         "or": "OU",

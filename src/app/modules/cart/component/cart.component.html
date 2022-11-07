@@ -30,12 +30,12 @@
         <div class="border-2 border-slate-100 rounded-md p-2">
           <div class="grid grid-rows-3 grid-flow-col gap-2 p-2">
             
-            <div class="grid justify-items-start"><h2 class="mt-1">Price : {{total}}$</h2></div>
+            <div class="grid justify-items-start"><h2 class="mt-1">{{'general.price' | translate}} : {{total}}$</h2></div>
             <div class="grid justify-items-start">
               <input type="text" oninput="this.value=this.value.replace(/[^0-9]/g,'');" (change)="addToCheckOut($event)" class="text-center h-6 w-24 bg-slate-200 font-semibold text-md hover:text-black focus:text-black text-gray-800  outline-none" min="0"
                name="custom-input-number" [value]="counter" [disabled]="notChecked">
             </div>
-            <div class="grid justify-items-end"><button class="btn" type="button" (click)="sendCheckOutList()">Checkout</button></div>
+            <div class="grid justify-items-end"><button class="btn" type="button" (click)="sendCheckOutList()">{{'general.checkout' | translate}}</button></div>
           </div>
         </div>
 
