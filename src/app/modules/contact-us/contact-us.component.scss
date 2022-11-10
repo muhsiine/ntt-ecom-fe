@@ -1,0 +1,36 @@
+:host {
+    @apply w-full;
+    }
+    .content{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .content .left-side{
+        width: 25%;
+        height: 100%;
+        position: relative;
+    }
+    .content .left-side::before{
+        content: '';
+        position: absolute;
+        height: 70%;
+        width: 2px;
+        right: -15px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    .content .left-side .details{
+        margin: 14px;
+        text-align: center;
+    }
+    .content .left-side .details .topic{
+        font-size: 18px;
+        font-weight: 500;
+
+    }
+    .content .right-side{
+        width: 75%;
+        margin-left: 90px;
+    }
+   

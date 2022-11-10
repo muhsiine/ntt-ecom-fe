@@ -19,6 +19,7 @@ import { HomeTemplateComponent } from './components/home-template/home-template.
 import { FooterComponent } from './components/shared/footer/footer.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { ContactUsComponent } from './modules/contact-us/contact-us.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     FooterComponent,
     NavbarComponent,
     SidebarComponent,
-    HomeTemplateComponent
+    HomeTemplateComponent,
+    ContactUsComponent
   ],
   imports: [
     SharedModule,
