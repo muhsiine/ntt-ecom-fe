@@ -19,6 +19,7 @@ import { HomeTemplateComponent } from './components/home-template/home-template.
 import { FooterComponent } from './components/shared/footer/footer.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { ModalComponent } from './components/modal/modal.component';
 
 @NgModule({
   declarations: [

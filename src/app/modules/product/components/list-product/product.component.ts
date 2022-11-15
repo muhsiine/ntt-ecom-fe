@@ -15,7 +15,6 @@ import * as moment from 'moment-timezone';
 })
 export class ProductComponent implements OnInit {
 
-  showDeleteModal: boolean = false;
   products: Product[] = [];
   loading: boolean = false;
   show: boolean = true;
@@ -37,6 +36,7 @@ export class ProductComponent implements OnInit {
   constructor(private productService: ProductService, private notifierServire: NotifierService,
     private categoryService: CategoryService) { }
 
+    showInfoModal: boolean = false;
   ngOnInit(): void {
     this.loading = true;
     this.filterForm.reset();
@@ -72,11 +72,14 @@ export class ProductComponent implements OnInit {
   }
   checks = false;
 
-  ShowDeleteProduct(id: any) {
-    this.showDeleteModal = true;
+  ShowInfoModal(id: any){
+    console.log(this.showInfoModal);
+    this.showInfoModal = true;
+    console.log('open');
   }
-  closeDeleteModal() {
-    this.showDeleteModal = false;
+  closeInfoModal() {
+    this.showInfoModal = false;
+    console.log('close');
   }
   onChange() {
 
