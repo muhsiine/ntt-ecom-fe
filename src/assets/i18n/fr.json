@@ -6,6 +6,9 @@
         "order": "Ordre", 
         "login": "Se connecter",
         "logout": "Se déconnecter",
+        "cart": "Carte",
+        "checkout" : "Caisse",
+        "price" : "Prix",
         "about": "À propos"
     },
     "auth": {
