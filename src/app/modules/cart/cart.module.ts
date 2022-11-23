@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CartComponent } from './component/cart.component';
 import { CartRoutingModule } from './cart-routing.module';
-import { SharedModule } from 'src/app/components/shared/shared.module';
+import { SharedModule } from '@modules/shared/shared.module';
 
 
 @NgModule({

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
-import { CategoryService } from 'src/app/modules/category/services/category.service';
-import { ProductService } from 'src/app/modules/product/services/product.service';
+import { CategoryService } from '@services/category.service';
+import { ProductService } from '@services/product.service';
 
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { CategoryByLang } from 'src/app/models/categoryByLang';

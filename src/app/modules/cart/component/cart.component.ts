@@ -3,7 +3,7 @@ import { Location } from '@angular/common';
 import { Image } from 'src/app/models/image';
 import { Product } from 'src/app/models/product';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { CartService } from '../services/cart.service';
+import { CartService } from '../../../services/cart.service';
 import { CartItem } from 'src/app/models/cartItem';
 
 @Component({
