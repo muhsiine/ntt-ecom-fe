@@ -19,15 +19,42 @@
       <label class="">{{ 'auth.email' | translate }}</label>
       <input class="input border-2 border-secondary-600" type="email" formControlName="email"
         placeholder="{{'auth.enter.email' | translate}}">
-      <small class="text-danger" *ngIf="f.email?.invalid && f.email?.touched">{{'auth.required.email' |
+      <small class="text-danger" *ngIf="f.email?.errors?.required && f.email?.touched">{{'auth.required.email' |
         translate}}</small>
+      <small class="text-danger" *ngIf="f.email?.value !== null && f.email?.invalid && f.email?.touched">{{ 'auth.invalid.email' | translate }}</small>
     </div>
     <div class="flex flex-col mb-4">
       <label class="">{{ 'auth.phonenumber' | translate }}</label>
-      <input class="input border-2 border-secondary-600" type="text" formControlName="phonenumber"
-        placeholder="{{'auth.enter.phonenumber' | translate}}">
-      <small class="text-danger" *ngIf="f.phonenumber?.invalid && f.phonenumber?.touched">{{'auth.required.phonenumber'
-        | translate}}</small>
+      <div class="register-phonenumber">
+        <ngx-intl-tel-input
+          [cssClass]="'custom'"
+          [preferredCountries]="preferredCountries"
+          [enableAutoCountrySelect]="true"
+          [enablePlaceholder]="true"
+          [searchCountryFlag]="true"
+          [searchCountryField]="[
+            SearchCountryField.Iso2,
+            SearchCountryField.Name,
+            SearchCountryField.DialCode
+          ]"
+          [selectFirstCountry]="false"
+          [selectedCountryISO]="CountryISO.Morocco"
+          [maxLength]="15"
+          [phoneValidation]="true"
+          [separateDialCode]="true"
+          [numberFormat]="PhoneNumberFormat.National"
+          name="phonenumber"
+          formControlName="phonenumber"
+        >
+        </ngx-intl-tel-input>
+      </div>
+    <!-- End of ngx-intl-tel-input -->
+      <small class="text-danger" *ngIf="f.phonenumber?.invalid && f.phonenumber?.errors?.required && f.phonenumber?.touched">
+        {{'auth.required.phonenumber' | translate}}
+      </small>
+      <small class="text-danger" *ngIf="f.phonenumber?.invalid && f.phonenumber?.errors?.validatePhoneNumber && f.phonenumber?.touched">
+        {{'auth.invalid.phonenumber' | translate}}
+      </small>
     </div>
     <div class="flex flex-col mb-4">
       <label class="">{{ 'auth.imageurl' | translate }}</label>
@@ -41,7 +68,9 @@
 
       <input class="input border-2 border-secondary-600" type="username" formControlName="username"
         placeholder="{{'auth.enter.username' | translate}}">
-      <small class="text-danger" *ngIf="f.username?.invalid && f.username?.touched">{{'auth.required.username' |
+      <small class="text-danger" *ngIf="f.username?.value === null && f.username?.invalid && f.username?.errors?.required && f.username?.touched">{{'auth.required.username' |
+        translate}}</small>
+      <small class="text-danger" *ngIf="f.username?.value !== null && f.username?.invalid && f.username?.touched">{{'auth.invalid.username' |
         translate}}</small>
     </div>
     <div class="flex flex-col mb-4">
@@ -60,8 +89,11 @@
       </div>
       <input class="input border-2 border-secondary-600" type="password" formControlName="confirmPassword"
         placeholder="{{'auth.enter.repeatpassword' | translate}}">
-      <small class="text-danger" *ngIf="f.confirmPassword?.invalid && f.confirmPassword?.touched">{{'auth.required.password' |
+      <small class="text-danger" *ngIf="f.confirmPassword?.invalid && f.confirmPassword?.value === null && f.confirmPassword?.touched">{{'auth.required.password' |
         translate}}</small>
+      <small class="text-danger" *ngIf="f.confirmPassword?.invalid && f.confirmPassword?.errors?.passwordNotMatch && f.confirmPassword?.touched">
+        {{ 'auth.invalid.password' | translate }}
+      </small>
     </div>
     <div class="text-center mt-6">
       <button

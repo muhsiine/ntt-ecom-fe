@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { IServiceCommon } from '../../../interfaces/common';
 import { Product } from '../../../models/product';
 import { environment } from '../../../../environments/environment';
+import { ProductFilter } from 'src/app/models/productFilter';
 
 @Injectable({
   providedIn: 'root'
@@ -28,6 +29,14 @@ export class ProductService implements IServiceCommon {
 
   saveProduct(product : Product): Observable<Product>{
       return this.http.post<Product>(`${this.baseUrl}/save`, product);
+  }
+
+  getMaxPrice(): Observable<Number>{
+    return this.http.get<Number>(`${this.baseUrl}/maxPrice`);
+  }
+
+  filter(productFilter : ProductFilter) : Observable<Product[]>{
+    return this.http.post<Product[]>(`${this.baseUrl}/filter`, productFilter);
   }
 
 }

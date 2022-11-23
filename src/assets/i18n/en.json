@@ -5,7 +5,11 @@
         "product": "Product",
         "order": "Order", 
         "login": "Login",
-        "logout": "Logout"
+        "logout": "Logout",
+        "cart": "Cart",
+        "checkout" : "Checkout",
+        "price" : "Price",
+        "about": "About"
     },
     "auth": {
         "or": "OR",
@@ -49,10 +53,16 @@
         "required": {
             "firstname": "First Name is empty",
             "lastname": "Last Name is empty",
-            "password": "Password is required",
-            "email": "Email format incorrect",
-            "username": "Username format incorrect",
-            "phonenumber": "PhoneNumber is required (only numbers are allowed)"
+            "password": "Password is required (Minimum 6 characters required)",
+            "email": "Email address is required",
+            "username": "Username is required",
+            "phonenumber": "Phone number is required"
+        },
+        "invalid": {
+            "email": "Email address format incorrect",
+            "username": "Username format incorrect (Minimum 6 characters required)",
+            "password": "Passwords didn’t match",
+            "phonenumber": "Phone number is not valid"
         },
         "forgotpassword": {
             "title": "Forgot password",
