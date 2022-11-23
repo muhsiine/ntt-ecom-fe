@@ -5,7 +5,12 @@
         "product": "Product",
         "order": "Order", 
         "login": "Login",
-        "logout": "Logout"
+        "logout": "Logout",
+        "view": "View",
+        "cart": "Cart",
+        "checkout" : "Checkout",
+        "price" : "Price",
+        "about": "About"
     },
     "auth": {
         "or": "OR",
@@ -49,10 +54,16 @@
         "required": {
             "firstname": "First Name is empty",
             "lastname": "Last Name is empty",
-            "password": "Password is required",
-            "email": "Email format incorrect",
-            "username": "Username format incorrect",
-            "phonenumber": "PhoneNumber is required (only numbers are allowed)"
+            "password": "Password is required (Minimum 6 characters required)",
+            "email": "Email address is required",
+            "username": "Username is required",
+            "phonenumber": "Phone number is required"
+        },
+        "invalid": {
+            "email": "Email address format incorrect",
+            "username": "Username format incorrect (Minimum 6 characters required)",
+            "password": "Passwords didn’t match",
+            "phonenumber": "Phone number is not valid"
         },
         "forgotpassword": {
             "title": "Forgot password",
@@ -71,5 +82,18 @@
         "help_setting" : "Help & Settings",
         "account" : "Your account",
         "help_center" : "Help center"
+    },
+    "product": {
+        "name": "Name",
+        "description": "Description",
+        "categories": "Categories",
+        "min.price": "Min Price",
+        "max.price": "Max Price"
+    },
+    "button":{
+        "search": "search",
+        "clear": "clear",
+        "delete.selected.product": "Delete selected product",
+        "add.product": "Add Product"
     }
 }

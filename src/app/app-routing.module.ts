@@ -13,6 +13,7 @@ const routes: Routes = [
   { path: 'login', component:LoginComponent },
   { path: 'product', component: HomeTemplateComponent, loadChildren:()=>import('@modules/product/product.module').then(res=>res.ProductModule) },
   { path: 'order', component: HomeTemplateComponent, loadChildren:()=>import('@modules/order/order.module').then(res=>res.OrderModule) },
+  { path: 'cart', component: HomeTemplateComponent, loadChildren:()=>import('./modules/cart/cart.module').then(res=>res.CartModule) },
   { path: 'register', component:RegisterComponent },
   { path: 'forgot-password', component:ForgetPasswordComponent },
   { path: 'not-permited', component:NotPermitedComponent },

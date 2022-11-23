@@ -7,11 +7,11 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { CategoryByLang } from 'src/app/models/categoryByLang';
 
 @Component({
-  selector: 'app-form-product',
-  templateUrl: './form-product.component.html',
-  styleUrls: ['./form-product.component.scss']
+  selector: 'add-edit-product',
+  templateUrl: './add-edit-product.component.html',
+  styleUrls: ['./add-edit-product.component.scss']
 })
-export class FormProductComponent implements OnInit {
+export class AddEditProductComponent implements OnInit {
   categories:CategoryByLang[]=[];
   body: any={};
   prodForm = new FormGroup({

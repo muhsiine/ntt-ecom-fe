@@ -19,7 +19,10 @@ module.exports = {
         dark: '#353535',
         back : '#FFFFFF'
       }
-    }
+    },
+    container: {
+      center: true,
+    },
   },
   plugins: [],
 }
