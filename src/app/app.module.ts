@@ -20,6 +20,7 @@ import { HomeTemplateComponent } from './components/home-template/home-template.
 import { FooterComponent } from './components/shared/footer/footer.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { ContactUsComponent } from './modules/contact-us/contact-us.component';
 import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
 import { AboutComponent } from './modules/about/about.component';
 
@@ -37,6 +38,7 @@ import { AboutComponent } from './modules/about/about.component';
     NavbarComponent,
     SidebarComponent,
     HomeTemplateComponent,
+    ContactUsComponent,
     AboutComponent
   ],
   imports: [
