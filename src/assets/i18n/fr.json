@@ -8,7 +8,8 @@
         "logout": "Se déconnecter",
         "cart": "Carte",
         "checkout" : "Caisse",
-        "price" : "Prix"
+        "price" : "Prix",
+        "about": "À propos"
     },
     "auth": {
         "or": "OU",

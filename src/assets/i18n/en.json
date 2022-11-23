@@ -8,7 +8,8 @@
         "logout": "Logout",
         "cart": "Cart",
         "checkout" : "Checkout",
-        "price" : "Price"
+        "price" : "Price",
+        "about": "About"
     },
     "auth": {
         "or": "OR",
