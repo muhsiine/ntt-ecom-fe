@@ -9,7 +9,7 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 
 import { ModeLangComponent } from './mode-lang/mode-lang.component';
 import { DataNotFoundComponent } from './data-not-found/data-not-found.component';
-import { AdminSidebarComponent } from '../admin-sidebar/admin-sidebar.component';
+import { AdminSidebarComponent } from '@components/admin-sidebar/admin-sidebar.component';
 import { LoaderComponent } from './loader/loader.component';
 import { StepperComponent } from './stepper/stepper.component';
 
