@@ -11,13 +11,15 @@ import { ModeLangComponent } from './mode-lang/mode-lang.component';
 import { DataNotFoundComponent } from './data-not-found/data-not-found.component';
 import { AdminSidebarComponent } from '../admin-sidebar/admin-sidebar.component';
 import { LoaderComponent } from './loader/loader.component';
+import { StepperComponent } from './stepper/stepper.component';
 
 @NgModule({
   declarations: [
     ModeLangComponent,
     DataNotFoundComponent,
     AdminSidebarComponent,
-    LoaderComponent
+    LoaderComponent,
+    StepperComponent
   ],
   imports: [
     CommonModule,
@@ -41,7 +43,8 @@ import { LoaderComponent } from './loader/loader.component';
     FormsModule,
     LoaderComponent,
     ReactiveFormsModule,
-    AdminSidebarComponent
+    AdminSidebarComponent,
+    StepperComponent
   ]
 })
 export class SharedModule { }

@@ -6,7 +6,11 @@
         "order": "Order", 
         "login": "Login",
         "logout": "Logout",
-        "view": "View"
+        "view": "View",
+        "cart": "Cart",
+        "checkout" : "Checkout",
+        "price" : "Price",
+        "about": "About"
     },
     "auth": {
         "or": "OR",

@@ -6,7 +6,11 @@
         "order": "Ordre", 
         "login": "Se connecter",
         "logout": "Se déconnecter",
-        "view": ""
+        "view": "",
+        "cart": "Carte",
+        "checkout" : "Caisse",
+        "price" : "Prix",
+        "about": "À propos"
     },
     "auth": {
         "or": "OU",
