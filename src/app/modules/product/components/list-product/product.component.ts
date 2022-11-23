@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/models/product';
 import { NotifierService } from 'src/app/services/notifier.service';
 import { ProductService } from 'src/app/modules/product/services/product.service';
+import { Notifier } from 'src/app/models/notifier';
 import { CategoryService } from 'src/app/modules/category/services/category.service';
 import { CategoryByLang } from 'src/app/models/categoryByLang';
-import { FormControl, FormGroup, ValidatorFn, AbstractControl, ValidationErrors } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 import { ProductFilter } from 'src/app/models/productFilter';
-import { Notifier } from '../../../../models/notifier';
 
 @Component({
   selector: 'app-product',
