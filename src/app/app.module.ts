@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
@@ -20,6 +21,8 @@ import { FooterComponent } from './components/shared/footer/footer.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { ContactUsComponent } from './modules/contact-us/contact-us.component';
+import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
+import { AboutComponent } from './modules/about/about.component';
 
 @NgModule({
   declarations: [
@@ -35,14 +38,17 @@ import { ContactUsComponent } from './modules/contact-us/contact-us.component';
     NavbarComponent,
     SidebarComponent,
     HomeTemplateComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    AboutComponent
   ],
   imports: [
     SharedModule,
     BrowserModule,
     AppRoutingModule,
     HomeModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxIntlTelInputModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

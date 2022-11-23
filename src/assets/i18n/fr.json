@@ -5,7 +5,11 @@
         "product": "Produit",
         "order": "Ordre", 
         "login": "Se connecter",
-        "logout": "Se déconnecter"
+        "logout": "Se déconnecter",
+        "cart": "Carte",
+        "checkout" : "Caisse",
+        "price" : "Prix",
+        "about": "À propos"
     },
     "auth": {
         "or": "OU",
@@ -49,10 +53,16 @@
         "required": {
             "firstname": "Prénom obligatoire",
             "lastname": "Nom obligatoire",
-            "password": "Mot de passe obligatoire",
+            "password": "Mot de passe obligatoire (Minimum 6 caractères requis)",
             "email": "Email obligatoire",
-            "username": "Surnom format incorrect",
-            "phonenumber": "Numero de télephone obligatoire (just les nombres)"
+            "username": "Surnom obligatoire",
+            "phonenumber": "Numero de télephone obligatoire"
+        },
+        "invalid": {
+            "email": "Format d'adresse e-mail incorrect",
+            "username": "Format du nom d'utilisateur incorrect (Minimum 6 caractères requis)",
+            "password": "Les mots de passe ne correspondent pas",
+            "phonenumber": "Le numéro de téléphone n'est pas valide"
         },
         "forgotpassword": {
             "title": "Mot de passe oublié",

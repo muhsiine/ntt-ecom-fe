@@ -67,3 +67,21 @@ a {
 
     @apply input border;
 }
+
+.register-phonenumber {
+    ngx-intl-tel-input input {
+        @apply w-full input border-2 border-secondary-600 focus:outline-none;
+    }
+
+    ngx-intl-tel-input.ng-invalid.ng-touched input {
+        @apply border-red-500 placeholder:text-red-500;
+    }
+
+    .iti.iti--allow-dropdown {
+        @apply w-full;
+    }
+
+    .iti__country.iti__standard {
+        @apply w-64 sm:w-80 whitespace-normal;
+    }
+}
