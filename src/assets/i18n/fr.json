@@ -6,6 +6,7 @@
         "order": "Ordre", 
         "login": "Se connecter",
         "logout": "Se déconnecter",
+        "view": "Vue",
         "cart": "Carte",
         "checkout" : "Caisse",
         "price" : "Prix",
@@ -84,5 +85,18 @@
         "help_setting" : "Aide et paramètres",
         "account" : "Votre compte",
         "help_center" : "Centre d'aide"
+    },
+    "product": {
+        "name": "Nom",
+        "description": "Description",
+        "categories": "Categories",
+        "min.price": "Prix minimum",
+        "max.price": "Pric maximum"
+    },
+    "button":{
+        "search": "Chercher",
+        "clear": "Vider le champs",
+        "delete.selected.product": "Supprimer produit selectioné",
+        "add.product": "Ajouter produit"
     }
 }
