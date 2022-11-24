@@ -2,8 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Location } from '@angular/common';
 import { Image } from 'src/app/models/image';
 import { Product } from 'src/app/models/product';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { CartService } from '../services/cart.service';
+import { FormControl, UntypedFormGroup, Validators } from '@angular/forms';
+import { CartService } from '../../../services/cart.service';
 import { CartItem } from 'src/app/models/cartItem';
 
 @Component({
@@ -47,7 +47,7 @@ export class CartComponent implements OnInit {
     {id : 20, name : 'Product 20', description: 'descripcion Product 20', category : {id: 3, categoryCode: 'HAF', description: 'Health & Fitness', icon: ''}, price: 1, nmAvailableItems: 100, images : this.images, quantity: 10, created_at: new Date(), modified_at: new Date(), deleted_at: new Date()},
   ];
 
-  checkOutForm = new FormGroup({});
+  checkOutForm = new UntypedFormGroup({});
 
   constructor(private location: Location, private cartService: CartService) { }
 
