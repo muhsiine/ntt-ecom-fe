@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms'
-import { SearchCountryField, CountryISO, PhoneNumberFormat } from 'ngx-intl-tel-input';
+import { AbstractControl, UntypedFormControl, UntypedFormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms'
+// import { SearchCountryField, CountryISO, PhoneNumberFormat } from 'ngx-intl-tel-input';
 
 @Component({
   selector: 'app-register',
@@ -12,12 +12,12 @@ export class RegisterComponent implements OnInit {
 
   // ngx-intl-tel-input
   separateDialCode = false;
-  SearchCountryField = SearchCountryField;
-  CountryISO = CountryISO;
-  PhoneNumberFormat = PhoneNumberFormat;
-  preferredCountries: CountryISO[] = [
-    CountryISO.Morocco
-  ];
+  // SearchCountryField = SearchCountryField;
+  // CountryISO = CountryISO;
+  // PhoneNumberFormat = PhoneNumberFormat;
+  // preferredCountries: CountryISO[] = [
+  //   CountryISO.Morocco
+  // ];
 
   passwordMatchingValidatior: ValidatorFn = (control: AbstractControl): ValidationErrors | null => {
     const password = control.get('password');
@@ -32,14 +32,14 @@ export class RegisterComponent implements OnInit {
     return null;
   };
   
-  registerForm = new FormGroup({
-    firstname: new FormControl(null, [Validators.required, Validators.minLength(3)]),
-    lastname: new FormControl(null, [Validators.required, Validators.minLength(3)]),
-    email: new FormControl(null, [Validators.required, Validators.email]),
-    phonenumber: new FormControl(null, [Validators.required]),
-    username: new FormControl(null, [Validators.required, Validators.minLength(6)]),
-    password: new FormControl(null, [Validators.required, Validators.minLength(6)]),
-    confirmPassword: new FormControl(null, [Validators.required]),
+  registerForm = new UntypedFormGroup({
+    firstname: new UntypedFormControl(null, [Validators.required, Validators.minLength(3)]),
+    lastname: new UntypedFormControl(null, [Validators.required, Validators.minLength(3)]),
+    email: new UntypedFormControl(null, [Validators.required, Validators.email]),
+    phonenumber: new UntypedFormControl(null, [Validators.required]),
+    username: new UntypedFormControl(null, [Validators.required, Validators.minLength(6)]),
+    password: new UntypedFormControl(null, [Validators.required, Validators.minLength(6)]),
+    confirmPassword: new UntypedFormControl(null, [Validators.required]),
   }, {
     validators: this.passwordMatchingValidatior
   })

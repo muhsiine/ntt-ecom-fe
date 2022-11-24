@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 
 @Component({
     selector: 'app-forget-password',
@@ -8,8 +8,8 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class ForgetPasswordComponent implements OnInit {
     
-    forgetPasswordForm = new FormGroup({
-        email: new FormControl(null, [Validators.required, Validators.email])
+    forgetPasswordForm = new UntypedFormGroup({
+        email: new UntypedFormControl(null, [Validators.required, Validators.email])
     });
     
     constructor() {

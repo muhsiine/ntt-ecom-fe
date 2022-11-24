@@ -5,7 +5,7 @@ import { ProductService } from '@services/product.service';
 import { Notifier } from 'src/app/models/notifier';
 import { CategoryService } from '@services/category.service';
 import { CategoryByLang } from 'src/app/models/categoryByLang';
-import { FormControl, FormGroup } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { ProductFilter } from 'src/app/models/productFilter';
 
 @Component({
@@ -24,14 +24,14 @@ export class ProductComponent implements OnInit {
   maxRangevalue: Number | null = null;
   categories: CategoryByLang[] = [];
   productFilter : ProductFilter = new  ProductFilter();
-  filterForm = new FormGroup({
-    name: new FormControl(null),
-    description: new FormControl(null),
-    price1: new FormControl(null),
-    price2: new FormControl(null),
-    categoryId: new FormControl(null),
-    initialDate: new FormControl(null),
-    endDate: new FormControl(null)
+  filterForm = new UntypedFormGroup({
+    name: new UntypedFormControl(null),
+    description: new UntypedFormControl(null),
+    price1: new UntypedFormControl(null),
+    price2: new UntypedFormControl(null),
+    categoryId: new UntypedFormControl(null),
+    initialDate: new UntypedFormControl(null),
+    endDate: new UntypedFormControl(null)
   });
   isList: boolean = true;
 

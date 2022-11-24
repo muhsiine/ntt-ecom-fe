@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
-import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
+// import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
 
 import { AppComponent } from './app.component';
 import { NotificationComponent } from '@modules/helpers/notification/notification.component';
@@ -37,7 +37,7 @@ import { LoginComponent } from '@modules/pages/login/login.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    NgxIntlTelInputModule
+    // NgxIntlTelInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
