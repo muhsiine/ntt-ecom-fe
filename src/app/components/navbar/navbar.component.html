@@ -3,10 +3,8 @@
     <h2 class="text-lg font-medium">NTT Squad</h2>
 </div>
 <div>
-    <a class="hover:text-slate-300 mr-4 text-base" routerLink="/" routerLinkActive="font-bold dark:text-white"
-        [routerLinkActiveOptions]="{exact: true}">{{ 'general.home' | translate }}</a>
-    <a class="hover:text-slate-300 text-base" routerLink="/product" routerLinkActive="font-bold dark:text-white">{{
-        'general.product' | translate }}</a>
+    <a class="hover:text-slate-300 mr-4 text-base" routerLink="/" routerLinkActive="font-bold dark:text-white" [routerLinkActiveOptions]="{exact: true}">{{ 'general.home' | translate }}</a>
+    <a class="hover:text-slate-300 text-base" routerLink="/product" routerLinkActive="font-bold dark:text-white">{{'general.product' | translate }}</a>
 </div>
 <div class="flex items-center">
     <app-mode-lang></app-mode-lang>

@@ -21,6 +21,8 @@ import { FooterComponent } from './components/shared/footer/footer.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
+import { ProfileComponent } from './modules/profile/profile.component';
+import { NgxJdenticonModule } from "ngx-jdenticon";
 
 @NgModule({
   declarations: [
@@ -35,7 +37,8 @@ import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
     FooterComponent,
     NavbarComponent,
     SidebarComponent,
-    HomeTemplateComponent
+    HomeTemplateComponent,
+    ProfileComponent
   ],
   imports: [
     SharedModule,
@@ -44,6 +47,7 @@ import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
     HomeModule,
     HttpClientModule,
     NgxIntlTelInputModule,
+    NgxJdenticonModule,
     BrowserAnimationsModule
   ],
   providers: [],

@@ -15,17 +15,19 @@ export class SidebarComponent implements OnInit {
 
   static isSidebarActive:boolean = false;
   categories: CategoryByLang[] = []; 
-  settingsList: Category[] = [
+  settingsList: any[] = [
     {
       "id": 1,
       "categoryCode": "sidebar.account",
       "icon": "bi-person-fill",
+      "link": "/profile",
       "languages": []
     },
     {
       "id": 2,
       "categoryCode": "sidebar.help_center",
       "icon": "bi-balloon-heart-fill",
+      "link": "bi-balloon-heart-fill",
       "languages": []
     }
   ];

@@ -18,4 +18,7 @@ export class ListProductGridComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onImgError(event: any) {
+    event.target.src = "https://cdn.browshot.com/static/images/not-found.png";
+  }
 }
