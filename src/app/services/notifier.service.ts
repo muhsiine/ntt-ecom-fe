@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { NotificationComponent } from '../components/notification/notification.component';
+import { NotificationComponent } from '../modules/helpers/notification/notification.component';
 import { Notifier } from '../models/notifier';
 
 @Injectable({

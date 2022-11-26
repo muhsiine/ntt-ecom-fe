@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { CategoryByLang } from '../../../../models/categoryByLang';
 import { ProductFilter } from '../../../../models/productFilter';
 
@@ -34,14 +34,14 @@ export class SearchProductComponent implements OnInit {
   view: EventEmitter<boolean> = new EventEmitter();
 
 
-  filterForm = new FormGroup({
-    name: new FormControl(null),
-    description: new FormControl(null),
-    price1: new FormControl(null),
-    price2: new FormControl(null),
-    categoryId: new FormControl(null),
-    initialDate: new FormControl(null),
-    endDate: new FormControl(null)
+  filterForm = new UntypedFormGroup({
+    name: new UntypedFormControl(null),
+    description: new UntypedFormControl(null),
+    price1: new UntypedFormControl(null),
+    price2: new UntypedFormControl(null),
+    categoryId: new UntypedFormControl(null),
+    initialDate: new UntypedFormControl(null),
+    endDate: new UntypedFormControl(null)
   });
 
 

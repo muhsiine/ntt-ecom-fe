@@ -5,7 +5,12 @@
         "product": "Product",
         "order": "Order", 
         "login": "Login",
-        "logout": "Logout"
+        "logout": "Logout",
+        "view": "View",
+        "cart": "Cart",
+        "checkout" : "Checkout",
+        "price" : "Price",
+        "about": "About"
     },
     "auth": {
         "or": "OR",
@@ -77,5 +82,18 @@
         "help_setting" : "Help & Settings",
         "account" : "Your account",
         "help_center" : "Help center"
+    },
+    "product": {
+        "name": "Name",
+        "description": "Description",
+        "categories": "Categories",
+        "min.price": "Min Price",
+        "max.price": "Max Price"
+    },
+    "button":{
+        "search": "search",
+        "clear": "clear",
+        "delete.selected.product": "Delete selected product",
+        "add.product": "Add Product"
     }
 }

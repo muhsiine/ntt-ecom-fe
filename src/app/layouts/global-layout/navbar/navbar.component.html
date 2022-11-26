@@ -1,0 +1,13 @@
+<div class="flex items-center">
+    <i (click)="openCloseSidebar()" class="bi bi-list text-2xl mr-3 cursor-pointer active:rotate-45 transition"></i>
+    <h2 class="text-lg font-medium">NTT Squad</h2>
+</div>
+<div>
+    <a class="hover:text-slate-300 mr-4 text-base" routerLink="/" routerLinkActive="font-bold dark:text-white" [routerLinkActiveOptions]="{exact: true}">{{ 'general.home' | translate }}</a>
+    <a class="hover:text-slate-300 text-base" routerLink="/product" routerLinkActive="font-bold dark:text-white">{{'general.product' | translate }}</a>
+</div>
+<div class="flex items-center">
+    <a routerLink="/cart" class="mr-4 text-lg"><i class="bi bi-basket-fill"></i></a>
+    <app-mode-lang></app-mode-lang>
+    <a class="btn" routerLink="/login">{{ 'general.login' | translate }}</a>
+</div>
