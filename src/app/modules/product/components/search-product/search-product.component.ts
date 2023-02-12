@@ -19,7 +19,7 @@ export class SearchProductComponent implements OnInit {
   validPrice: String | null = null;
   show: boolean = false;
   checks = false;
-  isList: boolean = true;
+  typeShow: string = 'list';
 
   @Input()
   maxPrice: Number = 0;
@@ -31,7 +31,7 @@ export class SearchProductComponent implements OnInit {
   submitFiltre: EventEmitter<ProductFilter> = new EventEmitter();
 
   @Output()
-  view: EventEmitter<boolean> = new EventEmitter();
+  view: EventEmitter<string> = new EventEmitter();
 
 
   filterForm = new UntypedFormGroup({
@@ -132,9 +132,9 @@ export class SearchProductComponent implements OnInit {
     }
   }
 
-  toggelListView(isList: boolean) {
-    this.isList = isList;
-    this.view.emit(this.isList);
+  toggelListView(type: string) {
+    this.typeShow = type;
+    this.view.emit(this.typeShow);
   }
 
 

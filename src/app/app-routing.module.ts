@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { GlobalLayoutComponent } from '@layouts/global-layout/global-layout.component';
-import { AboutComponent } from '@modules/pages/about/about.component';
-import { ContactUsComponent } from '@modules/pages/contact-us/contact-us.component';
 import { ForgetPasswordComponent } from '@modules/pages/forget-password/forget-password.component';
 import { LoginComponent } from '@modules/pages/login/login.component';
 import { NotFoundComponent } from '@modules/pages/not-found/not-found.component';
@@ -10,11 +8,17 @@ import { NotPermitedComponent } from '@modules/pages/not-permited/not-permited.c
 import { RegisterComponent } from '@modules/pages/register/register.component';
 
 const routes: Routes = [
-  { path: '', component: GlobalLayoutComponent, loadChildren:()=>import('@modules/pages/pages.module').then(res=>res.PagesModule) },
-  { path: 'product', component: GlobalLayoutComponent, loadChildren:()=>import('@modules/product/product.module').then(res=>res.ProductModule) },
-  { path: 'order', component: GlobalLayoutComponent, loadChildren:()=>import('@modules/order/order.module').then(res=>res.OrderModule) },
-  { path: 'cart', component: GlobalLayoutComponent, loadChildren: () => import('@modules/cart/cart.module').then(res => res.CartModule) },
-  { path: 'profile', component: GlobalLayoutComponent, loadChildren: () => import('@modules/profile/profile.module').then(res => res.ProfileModule) },
+  {
+    path: '', component: GlobalLayoutComponent, children: [
+      { path: '', loadComponent: () => import('@modules/pages/home/home.component').then(res => res.HomeComponent) },
+      { path: 'product', loadChildren: () => import('@modules/product/product.module').then(res => res.ProductModule) },
+      { path: 'order', loadChildren: () => import('@modules/order/order.module').then(res => res.OrderModule) },
+      { path: 'cart', loadChildren: () => import('@modules/cart/cart.module').then(res => res.CartModule) },
+      { path: 'profile', loadComponent: () => import('@modules/profile/profile.component').then(res => res.ProfileComponent) },
+      { path: 'about', loadComponent: () => import('@modules/pages/about/about.component').then(res => res.AboutComponent) },
+      { path: 'contact', loadComponent: () => import('@modules/pages/contact-us/contact-us.component').then(res => res.ContactUsComponent) }
+    ]
+  },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'forgot-password', component: ForgetPasswordComponent },
@@ -23,7 +27,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {relativeLinkResolution:'corrected'})],
+  imports: [RouterModule.forRoot(routes, { relativeLinkResolution: 'corrected' })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

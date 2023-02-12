@@ -3,9 +3,9 @@
 </div>
 <div class="relative overflow-x-auto shadow-md sm:rounded-lg w-5/6 m-auto ">
   <app-search-product (submitFiltre)="filter($event)" (view)="toggelListView($event)" [categories]="categories" [maxPrice]="maxPrice"></app-search-product>
-  <app-list-product-admin class="w-full text-lg text-left text-gray-500 dark:text-gray-400" [products]="products"></app-list-product-admin>
-  <app-list-product-details *ngIf="!isList" class="w-full text-lg text-left text-gray-500 dark:text-gray-400" [products]="products"></app-list-product-details>
-  <app-list-product-grid *ngIf="isList" class="w-full text-lg text-left text-gray-500 dark:text-gray-400" [products]="products"></app-list-product-grid>
+  <app-list-product-admin *ngIf="typeShow=='list'" class="w-full text-lg text-left text-gray-500 dark:text-gray-400" [products]="products"></app-list-product-admin>
+  <app-list-product-details *ngIf="typeShow=='grid'" class="w-full text-lg text-left text-gray-500 dark:text-gray-400" [products]="products"></app-list-product-details>
+  <app-list-product-grid *ngIf="typeShow=='details'" class="w-full text-lg text-left text-gray-500 dark:text-gray-400" [products]="products"></app-list-product-grid>
   <app-loader *ngIf="loading"></app-loader>
   <app-data-not-found *ngIf="!products.length && !loading"></app-data-not-found>
 
@@ -41,3 +41,4 @@
   </div>
 </div>
 
+<app-modal [showInfoModal]="showInfoModal" (emitter)="closeInfoModal()"></app-modal>

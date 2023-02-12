@@ -17,8 +17,7 @@ export class ListProductAdminComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
 
   bulk(e: any) {

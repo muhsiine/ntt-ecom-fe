@@ -20,7 +20,6 @@ export class ForgetPasswordComponent implements OnInit {
     }
 
     onForgetPasswordForm(): void {
-        console.log(this.forgetPasswordForm);
         this.validate();
     }
     

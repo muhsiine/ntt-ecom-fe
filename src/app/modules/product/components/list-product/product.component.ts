@@ -23,7 +23,7 @@ export class ProductComponent implements OnInit {
   minRangevalue: Number | null = null;
   maxRangevalue: Number | null = null;
   categories: CategoryByLang[] = [];
-  productFilter : ProductFilter = new  ProductFilter();
+  productFilter: ProductFilter = new ProductFilter();
   filterForm = new UntypedFormGroup({
     name: new UntypedFormControl(null),
     description: new UntypedFormControl(null),
@@ -33,10 +33,10 @@ export class ProductComponent implements OnInit {
     initialDate: new UntypedFormControl(null),
     endDate: new UntypedFormControl(null)
   });
-  isList: boolean = true;
+  typeShow: string = 'list';
+  showInfoModal: boolean = true;
 
-  constructor(private productService: ProductService, private notifierServire: NotifierService,
-    private categoryService: CategoryService) { }
+  constructor(private productService: ProductService, private notifierServire: NotifierService, private categoryService: CategoryService) { }
 
   ngOnInit(): void {
     this.loading = true;
@@ -58,7 +58,7 @@ export class ProductComponent implements OnInit {
     this.categoryService.getAll().subscribe(
       res => {
         this.categories = res;
-       // this.filterForm.controls['categoryId'].setValue(res[0]?.id);
+        // this.filterForm.controls['categoryId'].setValue(res[0]?.id);
       }
     )
   }
@@ -72,27 +72,36 @@ export class ProductComponent implements OnInit {
   }
   checks = false;
 
+  ShowInfoModal(id: any) {
+    console.log(this.showInfoModal);
+    this.showInfoModal = true;
+    console.log('open');
+  }
+  closeInfoModal() {
+    this.showInfoModal = false;
+    console.log('close');
+  }
+
   ShowDeleteProduct(id: any) {
     this.showDeleteModal = true;
   }
   closeDeleteModal() {
     this.showDeleteModal = false;
   }
- 
+
   filter(productFilter: ProductFilter) {
-      this.productService.filter(productFilter).subscribe(
-        res => {
-          this.products = res
-          console.log("products:" + this.products)
-        },
-        err => {
-          this.notifierServire.showNotification(Notifier.ERROR, "Error", err.error.message);
-          this.products = [];
-        })
+    this.productService.filter(productFilter).subscribe(
+      res => {
+        this.products = res
+      },
+      err => {
+        this.notifierServire.showNotification(Notifier.ERROR, "Error", err.error.message);
+        this.products = [];
+      })
   }
 
-  toggelListView(isList: boolean) {
-    this.isList = isList;
+  toggelListView(type: string) {
+    this.typeShow = type;
   }
 
 }
