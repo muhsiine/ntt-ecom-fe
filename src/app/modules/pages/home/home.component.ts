@@ -1,9 +1,16 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Product } from '@models/product';
+import { SharedModule } from '@modules/shared/shared.module';
 @Component({
+  standalone: true,
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
+  imports: [
+    SharedModule,
+    CommonModule
+  ]
 })
 export class HomeComponent implements OnInit {
 
@@ -12,13 +19,13 @@ export class HomeComponent implements OnInit {
     { title:"Product 2", link:"/product/2", imgUrl:"https://avartanslider.com/wp-content/uploads/2016/01/product-slider.png" },
     { title:"Product 3", link:"/product/3", imgUrl:"https://avartanslider.com/wp-content/uploads/2016/01/product-slider.png" },
   ];
-  //listProduct: Product[]=[
-  //  {id:1,name:"Apple AirPods Pro",price:450,quantity:200,created_at:new Date(),modified_at:null,deleted_at:null,description:"",category:{id:1,categoryCode:"ae",description:"Electronique",icon:"bi-motherboard-fill"}},
-  //  {id:1,name:"Apple AirPods Pro",price:450,quantity:200,created_at:new Date(),modified_at:null,deleted_at:null,description:"",category:{id:1,categoryCode:"ae",description:"Electronique",icon:"bi-motherboard-fill"}},
-  //  {id:1,name:"Apple AirPods Pro",price:450,quantity:200,created_at:new Date(),modified_at:null,deleted_at:null,description:"",category:{id:1,categoryCode:"ae",description:"Electronique",icon:"bi-motherboard-fill"}},
-  //  {id:1,name:"Apple AirPods Pro",price:450,quantity:200,created_at:new Date(),modified_at:null,deleted_at:null,description:"",category:{id:1,categoryCode:"ae",description:"Electronique",icon:"bi-motherboard-fill"}},
-  //  {id:1,name:"Apple AirPods Pro",price:450,quantity:200,created_at:new Date(),modified_at:null,deleted_at:null,description:"",category:{id:1,categoryCode:"ae",description:"Electronique",icon:"bi-motherboard-fill"}},
-  //];
+  listProduct: any[]=[
+   {id:1,name:"Apple AirPods Pro",price:450,quantity:200,created_at:new Date(),modified_at:null,deleted_at:null,description:"",category:{id:1,categoryCode:"ae",description:"Electronique",icon:"bi-motherboard-fill"}},
+   {id:1,name:"Apple AirPods Pro",price:450,quantity:200,created_at:new Date(),modified_at:null,deleted_at:null,description:"",category:{id:1,categoryCode:"ae",description:"Electronique",icon:"bi-motherboard-fill"}},
+   {id:1,name:"Apple AirPods Pro",price:450,quantity:200,created_at:new Date(),modified_at:null,deleted_at:null,description:"",category:{id:1,categoryCode:"ae",description:"Electronique",icon:"bi-motherboard-fill"}},
+   {id:1,name:"Apple AirPods Pro",price:450,quantity:200,created_at:new Date(),modified_at:null,deleted_at:null,description:"",category:{id:1,categoryCode:"ae",description:"Electronique",icon:"bi-motherboard-fill"}},
+   {id:1,name:"Apple AirPods Pro",price:450,quantity:200,created_at:new Date(),modified_at:null,deleted_at:null,description:"",category:{id:1,categoryCode:"ae",description:"Electronique",icon:"bi-motherboard-fill"}},
+  ];
 
   constructor() {
   

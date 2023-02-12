@@ -55,7 +55,6 @@ export class RegisterComponent implements OnInit {
   private validate(): void {
     if(this.registerForm.status === 'INVALID'){
       this.registerForm.markAllAsTouched();
-      console.log(this.f)
       return;
     }
   }

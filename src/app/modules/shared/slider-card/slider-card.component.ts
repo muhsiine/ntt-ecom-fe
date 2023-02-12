@@ -11,9 +11,6 @@ export class SliderCardComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-    console.log(this.data);
-    
-  }
+  ngOnInit(): void {}
 
 }

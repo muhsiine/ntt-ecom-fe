@@ -33,7 +33,7 @@ export class ProductComponent implements OnInit {
     initialDate: new UntypedFormControl(null),
     endDate: new UntypedFormControl(null)
   });
-  isList: boolean = true;
+  typeShow: string = 'list';
 
   constructor(private productService: ProductService, private notifierServire: NotifierService,
     private categoryService: CategoryService) { }
@@ -83,7 +83,6 @@ export class ProductComponent implements OnInit {
       this.productService.filter(productFilter).subscribe(
         res => {
           this.products = res
-          console.log("products:" + this.products)
         },
         err => {
           this.notifierServire.showNotification(Notifier.ERROR, "Error", err.error.message);
@@ -91,8 +90,8 @@ export class ProductComponent implements OnInit {
         })
   }
 
-  toggelListView(isList: boolean) {
-    this.isList = isList;
+  toggelListView(type: string) {
+    this.typeShow = type;
   }
 
 }

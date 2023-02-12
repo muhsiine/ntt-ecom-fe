@@ -17,9 +17,8 @@ import { AuthLayoutComponent } from '@layouts/auth-layout/auth-layout.component'
 import { RegisterComponent } from '@modules/pages/register/register.component';
 import { ForgetPasswordComponent } from '@modules/pages/forget-password/forget-password.component';
 import { LoginComponent } from '@modules/pages/login/login.component';
-import { ProfileComponent } from './modules/profile/profile.component';
-import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
-import { NgxJdenticonModule } from "ngx-jdenticon";
+// import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
+// import { NgxJdenticonModule } from "ngx-jdenticon";
 
 @NgModule({
   declarations: [
@@ -33,16 +32,15 @@ import { NgxJdenticonModule } from "ngx-jdenticon";
     ForgetPasswordComponent,
     AdminSidebarComponent,
     GlobalLayoutComponent,
-    AuthLayoutComponent,
-    ProfileComponent
+    AuthLayoutComponent
   ],
   imports: [
     SharedModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    NgxIntlTelInputModule,
-    NgxJdenticonModule
+    // NgxIntlTelInputModule,
+    // NgxJdenticonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
