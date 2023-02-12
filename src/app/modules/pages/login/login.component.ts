@@ -2,11 +2,16 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from 'src/app/models/user';
 import { NotifierService } from 'src/app/services/notifier.service';
+import { SharedModule } from '@modules/shared/shared.module'
 
 @Component({
+  standalone: true,
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
+  imports: [
+    SharedModule
+  ]
 })
 export class LoginComponent implements OnInit {
 

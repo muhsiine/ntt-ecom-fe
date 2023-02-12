@@ -1,10 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
+import { SharedModule } from '@modules/shared/shared.module';
 
 @Component({
+    standalone: true,
     selector: 'app-forget-password',
     templateUrl: './forget-password.component.html',
-    styleUrls: ['./forget-password.component.scss']
+    styleUrls: ['./forget-password.component.scss'],
+    imports: [ SharedModule ]
 })
 export class ForgetPasswordComponent implements OnInit {
     

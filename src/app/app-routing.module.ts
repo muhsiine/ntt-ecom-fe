@@ -1,11 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthLayoutComponent } from '@layouts/auth-layout/auth-layout.component';
 import { GlobalLayoutComponent } from '@layouts/global-layout/global-layout.component';
-import { ForgetPasswordComponent } from '@modules/pages/forget-password/forget-password.component';
-import { LoginComponent } from '@modules/pages/login/login.component';
 import { NotFoundComponent } from '@modules/pages/not-found/not-found.component';
 import { NotPermitedComponent } from '@modules/pages/not-permited/not-permited.component';
-import { RegisterComponent } from '@modules/pages/register/register.component';
 
 const routes: Routes = [
   {
@@ -19,9 +17,13 @@ const routes: Routes = [
       { path: 'contact', loadComponent: () => import('@modules/pages/contact-us/contact-us.component').then(res => res.ContactUsComponent) }
     ]
   },
-  { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
-  { path: 'forgot-password', component: ForgetPasswordComponent },
+  {
+    path: '', component: AuthLayoutComponent, children: [
+      { path: 'login', loadComponent: () => import('@modules/pages/login/login.component').then(res => res.LoginComponent) },
+      { path: 'register', loadComponent: () => import('@modules/pages/register/register.component').then(res => res.RegisterComponent) },
+      { path: 'forgot-password', loadComponent: () => import('@modules/pages/forget-password/forget-password.component').then(res => res.ForgetPasswordComponent) },
+    ]
+  },
   { path: 'access', component: NotPermitedComponent },
   { path: '**', component: NotFoundComponent }
 ];
