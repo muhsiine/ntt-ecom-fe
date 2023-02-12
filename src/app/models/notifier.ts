@@ -2,5 +2,7 @@ export enum Notifier{
     SUCCESS = "success",
     WARNING = "warning",
     INFO = "info",
-    ERROR = "error"
+    ERROR = "error",
+    OK = "ok",
+    CONFIRM ="confirm"
 }
