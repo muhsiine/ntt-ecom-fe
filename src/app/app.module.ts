@@ -14,10 +14,7 @@ import { SharedModule } from '@modules/shared/shared.module';
 import { NavbarComponent } from '@layouts/global-layout/navbar/navbar.component';
 import { SidebarComponent } from '@layouts/global-layout/sidebar/sidebar.component';
 import { AuthLayoutComponent } from '@layouts/auth-layout/auth-layout.component';
-import { RegisterComponent } from '@modules/pages/register/register.component';
-import { ForgetPasswordComponent } from '@modules/pages/forget-password/forget-password.component';
-import { LoginComponent } from '@modules/pages/login/login.component';
-import { ModalComponent } from './modules/helpers/modal/modal.component';
+// import { ModalComponent } from './modules/helpers/modal/modal.component';
 
 // import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
 // import { NgxJdenticonModule } from "ngx-jdenticon";
@@ -29,9 +26,6 @@ import { ModalComponent } from './modules/helpers/modal/modal.component';
     NavbarComponent,
     FooterComponent,
     SidebarComponent,
-    RegisterComponent,
-    LoginComponent,
-    ForgetPasswordComponent,
     AdminSidebarComponent,
     GlobalLayoutComponent,
     AuthLayoutComponent

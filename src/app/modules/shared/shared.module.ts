@@ -41,6 +41,7 @@ import { StepperComponent } from './stepper/stepper.component';
     })
   ],
   exports:[
+    CommonModule,
     ModeLangComponent,
     DataNotFoundComponent,
     ProductCardComponent,
@@ -50,7 +51,8 @@ import { StepperComponent } from './stepper/stepper.component';
     StepperComponent,
     TranslateModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule
   ]
 })
 export class SharedModule { }
