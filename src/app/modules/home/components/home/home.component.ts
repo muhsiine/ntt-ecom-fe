@@ -13,11 +13,11 @@ export class HomeComponent implements OnInit {
     { title:"Product 3", link:"/product/3", imgUrl:"https://avartanslider.com/wp-content/uploads/2016/01/product-slider.png" },
   ];
   listProduct: Product[]=[
-    {id:1,name:"Apple AirPods Pro",price:450,quantity:200,created_at:new Date(),modified_at:null,deleted_at:null,description:"",category:{id:1,categoryCode:"ae",description:"Electronique",icon:"bi-motherboard-fill"}},
-    {id:1,name:"Apple AirPods Pro",price:450,quantity:200,created_at:new Date(),modified_at:null,deleted_at:null,description:"",category:{id:1,categoryCode:"ae",description:"Electronique",icon:"bi-motherboard-fill"}},
-    {id:1,name:"Apple AirPods Pro",price:450,quantity:200,created_at:new Date(),modified_at:null,deleted_at:null,description:"",category:{id:1,categoryCode:"ae",description:"Electronique",icon:"bi-motherboard-fill"}},
-    {id:1,name:"Apple AirPods Pro",price:450,quantity:200,created_at:new Date(),modified_at:null,deleted_at:null,description:"",category:{id:1,categoryCode:"ae",description:"Electronique",icon:"bi-motherboard-fill"}},
-    {id:1,name:"Apple AirPods Pro",price:450,quantity:200,created_at:new Date(),modified_at:null,deleted_at:null,description:"",category:{id:1,categoryCode:"ae",description:"Electronique",icon:"bi-motherboard-fill"}},
+    {id:1,name:"Apple AirPods Pro",price:500,quantity:200,created_at:new Date(),modified_at:null,deleted_at:null,description:"",category:{id:1,categoryCode:"ae",description:"Electronique",icon:"bi-motherboard-fill"}},
+    {id:2,name:"Apple AirPods Pro",price:450,quantity:200,created_at:new Date(),modified_at:null,deleted_at:null,description:"",category:{id:1,categoryCode:"ae",description:"Electronique",icon:"bi-motherboard-fill"}},
+    {id:3,name:"Apple AirPods Pro",price:600,quantity:200,created_at:new Date(),modified_at:null,deleted_at:null,description:"",category:{id:1,categoryCode:"ae",description:"Electronique",icon:"bi-motherboard-fill"}},
+    {id:4,name:"Apple AirPods Pro",price:650,quantity:200,created_at:new Date(),modified_at:null,deleted_at:null,description:"",category:{id:1,categoryCode:"ae",description:"Electronique",icon:"bi-motherboard-fill"}},
+    {id:5,name:"Apple AirPods Pro",price:700,quantity:200,created_at:new Date(),modified_at:null,deleted_at:null,description:"",category:{id:1,categoryCode:"ae",description:"Electronique",icon:"bi-motherboard-fill"}},
   ];
 
   constructor() {

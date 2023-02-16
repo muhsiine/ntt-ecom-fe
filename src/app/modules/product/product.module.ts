@@ -5,11 +5,13 @@ import { SharedModule } from 'src/app/components/shared/shared.module';
 
 import { FormProductComponent } from './components/form-product/form-product.component';
 import { ProductComponent } from './components/list-product/product.component';
+import { DetailsProductComponent } from './components/details-product/details-product.component';
 
 @NgModule({
   declarations: [
     ProductComponent,
-    FormProductComponent
+    FormProductComponent,
+    DetailsProductComponent
   ],
   imports: [
     CommonModule,
